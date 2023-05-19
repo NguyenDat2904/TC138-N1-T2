@@ -30,7 +30,7 @@
                             <li><a class="dropdown-item" href="#">Hải sản</a></li>                           
                         </ul>
                         <input type="text" class="form-control input_search" aria-label="Text input with dropdown button" placeholder="Nhập từ khóa tìm kiếm.....">
-                        <i class="fas fa-search btn_search"></i>
+                        <i class="fas fa-search btn_search hover_green"></i>
                     </div>
                 </div>
                 <div class="header_user">
@@ -46,7 +46,7 @@
                         </a>
                     </div>
                     <div class="user_profile">
-                        <a href="">
+                        <a href="" class="hover_green">
                             <i class="far fa-user"></i>
                             <ul class="user_item">
                                 <li>Đăng nhập</li>
@@ -82,7 +82,7 @@
                     <span>Danh mục sản phẩm</span>
                 </div>
                 <div class="nav_list">
-                    <ul>
+                    <ul class="text_small">
                         <li class="nav_list-product hover">Trang chủ</li>
                         <li class="nav_list-product">Giới thiệu</li>
                         <li class="nav_list-product">
@@ -142,7 +142,7 @@
                             <div class="slide_body">
                                 <h2>Đừng bỏ lỡ <br> những ưu đãi tuyệt vời</h2>
                                 <p>Tiết kiệm lên đến 50% cho đơn đặt hàng đầu tiên</p>
-                                <button>Sản phẩm</button>
+                                <button class="text_small">Sản phẩm</button>
                             </div>
                         </div>
                         <div class="carousel-item slide_show">
@@ -150,7 +150,7 @@
                             <div class="slide_body">
                                 <h2>Rau, Củ, Qủa sạch <br> Giảm giá lớn</h2>
                                 <p>Tiết kiệm lên đến 50% cho đơn đặt hàng đầu tiên</p>
-                                <button>Sản phẩm</button>
+                                <button class="text_small">Sản phẩm</button>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,239 @@
         <!-- III. Sản phẩm phổ biến, bán chạy - Long -->
         
         <!-- END Sản phẩm phổ biến, bán chạy -->
-        
+        <!-- Làm thêm -->
+            <section id="product_new">
+                <div class="container-xl">
+                    <div class="row">
+                        <div class="col col-6 col-lg-4">
+                            <div class="card cart_product">
+                                <h2 class="title_product">
+                                    Sản phẩm mới
+                                </h2>
+                                <div class="repeat-box">
+                                    <article>
+                                        <div class="box_img">
+                                            <img src="/asset/img/sp moi/chuoi-say.jpg" alt="">
+                                            <div class="box_discount">-8%</div>
+                                        </div>
+                                        <div class="box_infor">
+                                            <h3 class="hover_green">Chuối sấy</h3>
+                                            <div class="box_star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="box_cart">
+                                                <div class="box_money text_small">
+                                                    36.000 đ <span>39.000 đ</span>
+                                                </div>
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="box_img">
+                                            <img src="/asset/img/sp moi/khoai-lang-tim.jpg" alt="">
+                                            <div class="box_discount">-11%</div>
+                                        </div>
+                                        <div class="box_infor">
+                                            <h3 class="hover_green">Khoai lang tím sấy</h3>
+                                            <div class="box_star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="box_cart">
+                                                <div class="box_money text_small">
+                                                    50.000 đ <span>56.000 đ</span>
+                                                </div>
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="box_img">
+                                            <img src="/asset/img/sp moi/dau-tay-say2.jpg" alt="">
+                                            <div class="box_discount">-3%</div>
+                                        </div>
+                                        <div class="box_infor">
+                                            <h3 class="hover_green">Dâu tây sấy</h3>
+                                            <div class="box_star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="box_cart">
+                                                <div class="box_money text_small">
+                                                    1.400.000 đ <span>1.440.000 đ</span>
+                                                </div>
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </article>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-6 col-lg-4">
+                        <div class="card cart_product">
+                            <h2 class="title_product">
+                                Mua nhiều
+                            </h2>
+                            <div class="repeat-box">
+                                <article>
+                                    <div class="box_img">
+                                        <img src="/asset/img/sp moi/chuoi-say.jpg" alt="">
+                                        <div class="box_discount">-8%</div>
+                                    </div>
+                                    <div class="box_infor">
+                                        <h3 class="hover_green">Chuối sấy</h3>
+                                        <div class="box_star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="box_cart">
+                                            <div class="box_money text_small">
+                                                36.000 đ <span>39.000 đ</span>
+                                            </div>
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article>
+                                    <div class="box_img">
+                                        <img src="/asset/img/sp moi/khoai-lang-tim.jpg" alt="">
+                                        <div class="box_discount">-11%</div>
+                                    </div>
+                                    <div class="box_infor">
+                                        <h3 class="hover_green">Khoai lang tím sấy</h3>
+                                        <div class="box_star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="box_cart">
+                                            <div class="box_money text_small">
+                                                50.000 đ <span>56.000 đ</span>
+                                            </div>
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article>
+                                    <div class="box_img">
+                                        <img src="/asset/img/sp moi/dau-tay-say2.jpg" alt="">
+                                        <div class="box_discount">-3%</div>
+                                    </div>
+                                    <div class="box_infor">
+                                        <h3 class="hover_green">Dâu tây sấy</h3>
+                                        <div class="box_star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="box_cart">
+                                            <div class="box_money text_small">
+                                                1.400.000 đ <span>1.440.000 đ</span>
+                                            </div>
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col col-6 col-lg-4">
+                            <div class="card cart_product">
+                                <h2 class="title_product">
+                                    Bột, ngũ cốc
+                                </h2>
+                                <div class="repeat-box">
+                                    <article>
+                                        <div class="box_img">
+                                            <img src="/asset/img/sp moi/chuoi-say.jpg" alt="">
+                                            <div class="box_discount">-8%</div>
+                                        </div>
+                                        <div class="box_infor">
+                                            <h3 class="hover_green">Óc chó vị caramel Nutty hũ 150g</h3>
+                                            <div class="box_star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="box_cart">
+                                                <div class="box_money text_small">
+                                                    36.000 đ <span>39.000 đ</span>
+                                                </div>
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="box_img">
+                                            <img src="/asset/img/sp moi/khoai-lang-tim.jpg" alt="">
+                                            <div class="box_discount">-11%</div>
+                                        </div>
+                                        <div class="box_infor">
+                                            <h3 class="hover_green">Khoai lang tím sấy</h3>
+                                            <div class="box_star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="box_cart">
+                                                <div class="box_money text_small">
+                                                    50.000 đ <span>56.000 đ</span>
+                                                </div>
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article>
+                                        <div class="box_img">
+                                            <img src="/asset/img/sp moi/dau-tay-say2.jpg" alt="">
+                                            <div class="box_discount">-3%</div>
+                                        </div>
+                                        <div class="box_infor">
+                                            <h3 class="hover_green">Dâu tây sấy</h3>
+                                            <div class="box_star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="box_cart">
+                                                <div class="box_money text_small">
+                                                    1.400.000 đ <span>1.440.000 đ</span>
+                                                </div>
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- END LÀM THÊM -->
         <!-- IV. Liên hệ - Hùng -->
         
         <!-- END Liên Hệ -->

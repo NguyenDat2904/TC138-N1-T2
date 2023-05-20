@@ -85,7 +85,7 @@ body{
     position: relative;
 }
 .tip{
-    padding:25% 10% ;
+    padding:16% 10% ;
 
 }
 .lookfor{
@@ -110,8 +110,9 @@ body{
     border:none;
     border-radius: 50px;
     position: absolute;
-    right: -20px;
+    right: -30px;
     top:0;
+    bottom:0;
     
    
    
@@ -156,6 +157,14 @@ h4{
 .i{
     width:50px;
 }
+.errorMsg{
+    font-size: 16px;
+    color:red;
+    font-weight:500;
+}
+.errorborder{
+    border: 1px solid red;
+}
 @media (max-width: 840px) { 
     .card_Surrounded{
         grid-template-columns: 1fr ;
@@ -186,5 +195,6 @@ h4{
         grid-template-columns: 1fr 1fr ;
     grid-template-rows: 100px;
     }
+
     
  }

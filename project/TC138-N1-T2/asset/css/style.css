@@ -1,0 +1,141 @@
+/* BEGIN RESET CSS */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* color */
+
+
+    /* % */
+    --percent50: 50%;
+    --percent100: 100%;
+
+    /* fontweight */
+    --fw8: 800;
+    --fw7: 700;
+    --fw6: 600;
+    --fw5: 500;
+    --fw3: 300;
+
+    /* transition color */
+    --trans-background-color: background-color .3s, color .3s;
+    --trans-background: background-color .3s;
+    --trans-color: color .3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: var(--percent100);
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    /* Reset lại màu mặc định */
+    color: initial;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input::placeholder {
+    /* kế thừa cha chứa nó */
+    font: inherit;
+}
+/* END RESET CSS */
+
+/* BEGIN CSS DANH MỤC CHÍNH */
+.dmc{
+    padding: 60px 0;
+    
+}
+h1{
+    height: auto;
+    width: auto;
+    color: #253D4E;
+    font-size: 32px;
+    font-family: "Quicksand";
+    top: unset;
+    left: unset;
+    font-weight: 700;
+    margin: 0px 30px 40px 0px;
+    display: block;
+    position: relative;
+}
+.card-dcm-top{
+    height: 200px;
+    background-color: #F4F6FA;
+    display: flex;
+    justify-content: center;
+}
+.card-dcm-top:hover{
+    background-color: white;
+    border-color: #3BB77E;
+    cursor: pointer;
+}
+
+.card-dcm-top:hover .card-title{
+    color: #3BB77E;
+}
+.card-img-top{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card-title{
+    text-align: center;
+    font-size: 20px;
+}
+.card-text{
+    color: black;
+    margin-bottom: 30px;
+    font-family: "Quicksand";
+    font-weight: 700;
+    line-height: 27px;
+    font-size: 20px;
+}
+.btn{
+    background-color: #3BB77E;
+} 
+.btn:hover{
+    background-color: #FDC040;
+}
+.text-bg-dark{
+    height: 300px;
+}
+.card-img{
+    height: 100%;
+}
+.card-text:hover{
+    color: #3BB77E;
+    transform: translateY(-10px);
+}
+.fa-solid{
+    font-size: 12px;
+}
+.swiper-click{
+    padding-top: 20px;
+    width: 175px;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(330%);
+    white-space: nowrap;
+    text-align: center;
+    transition: .3s opacity;
+    z-index: 10;
+    cursor: pointer;
+}
+/* END CSS DANH MỤC CHÍNH */

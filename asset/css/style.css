@@ -18,11 +18,6 @@
     --fw6: 600;
     --fw5: 500;
     --fw3: 300;
-
-    /* transition color */
-    --trans-background-color: background-color .3s, color .3s;
-    --trans-background: background-color .3s;
-    --trans-color: color .3s;
 }
 * {
     padding: 0;
@@ -32,6 +27,7 @@
 body{
     font-family: "Quicksand";
     font-size: 16px;
+
 }
 
 ul {
@@ -42,8 +38,10 @@ p{
     margin: 0;
 }
 img {
-    max-width: var(--percent100);
+    width: var(--percent100);
+    height: var(--percent100);
     vertical-align: middle;
+    object-fit: cover;
 }
 
 a {
@@ -64,6 +62,14 @@ input::placeholder {
 }
 .hover_green:hover {
     color: var(--background-green);
+    cursor: pointer;
+}
+.div_empty:empty {
+    padding: 0;
+    margin: 0;
+    }
+.boder_bottom {
+    border-bottom: 1px solid #ececec;
 }
 /* END RESET CSS */
 
@@ -170,13 +176,10 @@ input::placeholder {
     display: block;
     animation: fadeInUp 0.5s;
 }
-.user_profile>a>.user_item >li{
+.user_item >li{
     padding: 3px 10px;
     font-weight: var(--fw5);
     color: #253D4E;
-}
-.user_profile>a>.user_item>li:hover {
-    color: var(--background-green);
 }
 .user_card{
     display: flex;
@@ -189,10 +192,11 @@ input::placeholder {
 }
 .user_card-total{
     position: absolute;
+    width: 300px;
+    max-height: 400px;
     z-index: 10;
     top: 100%;
     right: 0;
-    width: max-content;
     background-color: var(--white-color);
     border-radius: 10px;
     padding: 15px 20px;
@@ -200,14 +204,31 @@ input::placeholder {
     border: 1px solid #ececec;
     display: none;
 }
+.total_product{
+    overflow-y: scroll;
+    max-height: 200px;
+}
+.total_product::-webkit-scrollbar{
+    width: 4px;
+}
 .user_card-total > p{
     color: #7E7E7E;
     margin-bottom: 16px;
+}
+.buy_product{
+    padding: 15px 0;
+    border-radius: 0;
+    
+}
+.buy_product > .box_img {
+    width: 100%;
+    height: 80px;
 }
 .user_total-money{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 16px;
 }
 .user_total-money > p{
     font-weight: var(--fw6);
@@ -251,7 +272,7 @@ input::placeholder {
         font-size: 25px;
 }
 .user_card-number{
-    width: 20px;
+        width: 20px;
         height: 20px;
         background-color: var(--background-green);
         color: var(--white-color);
@@ -259,9 +280,10 @@ input::placeholder {
         text-align: center;
         line-height: 20px;
         font-size: 14px;
-        transform: translateY(-10px) translateX(-10px);
+    }
+.user_card-number.posi{
+    transform: translateY(-10px) translateX(-10px);
 }
-
 nav{
     position: sticky;
     top: 0;
@@ -468,26 +490,27 @@ nav{
     flex-direction: column;
     gap: 25px;
 }
-.repeat-box > article {
+article {
     background-color: var(--white-color);
     border-radius: 10px;
     transition: all 0.5s ease-out;
     display: flex;
     gap: 20px;
 }
-.repeat-box>article:hover{
+article.newpro:hover{
     box-shadow: rgba(0, 0, 0, 0.05) 5px 5px 15px;
     transform: translateY(-10px);
     transition: all 500ms ease;
     cursor: pointer;
 }
-.repeat-box > article > .box_img{
+article > .box_img{
     position: relative;
     flex-basis: 33.3333333%;
     border-radius: 10px;
+    height: 132px;
     overflow: hidden;
 }
-article>.box_img >.box_discount{
+    .box_discount{
     position: absolute;
     font-weight: var(--fw6);
     padding: 3px 10px;
@@ -498,18 +521,24 @@ article>.box_img >.box_discount{
     color: var(--white-color);
     font-size: 12px;
 }
-.repeat-box>article>.box_infor{
+
+article >.box_infor{
     flex-basis: 66.6666666%;
     align-self: center;
 }
-.box_infor > h3 {
-    height: 46px;
+.box_infor  h3 {
+    height: 40px;
     color: #253D4E;
     font-family: "Montserrat";
     font-size: 16px;
     font-weight: var(--fw6);
     margin-bottom: 0;
     cursor: pointer;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
 }
 .box_infor > .box_star > i {
     font-size: 12px;
@@ -523,7 +552,7 @@ article>.box_img >.box_discount{
 .box_cart > .box_money {
     color: #3BB77E;
 }
-.box_cart>.box_money > span {
+.box_cart > span {
     color: #7E7E7E;
     margin-left: 10px;
     font-size: 13px;
@@ -546,4 +575,35 @@ article>.box_img >.box_discount{
 .box_cart>i:hover {
     background-color: var(--background-green);
     color: var(--white-color);
+}
+
+
+/* HomePage */
+#home_page{
+    display: block;
+}
+#home_page.active {
+    display: none;
+}
+
+/* gioi thieu */
+#interduce_page{
+    display: block;
+}
+#interduce_page.active {
+    display: none;
+}
+/* dang ki */
+#signup_page {
+    display: block;
+}
+#signup_page.active {
+    display: none;
+}
+/* dang nhap */
+#signin_page {
+    display: block;
+}
+#signin_page.active {
+    display: none;
 }

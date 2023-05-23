@@ -1024,3 +1024,130 @@ h4{
 
     
  }
+ .footer{
+    width: 1200px;
+    background-color: white;
+    margin: auto auto;
+}
+.footer-item{
+    height: 100%;
+    width: var(--width-container);
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0px;
+    flex: 1;
+}
+.footer-item.diachi{
+    display: flex;
+    flex-direction: column;
+}
+.footer-item.dichvu{
+    display: flex;
+    flex-direction: column;
+}
+.footer-item.menu{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    font-size: 22px;
+    margin: 30px 0;
+    padding: auto;
+    color: #253D4E;
+}
+.footer-item.sanpham{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-location{
+    display: flex;
+}
+.item-tel{
+    display: flex;
+}
+.item-tel:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+.item-web{
+    display: flex;
+}
+.item-web:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+.item-time{
+    display: flex;
+}
+.item-time:hover{
+    cursor: pointer;
+}
+.img-logo{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/files/logo.png?t=1670225696);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 185px;
+    height: 58px;
+    margin: 0 0 20px;
+}
+.img-logo:hover{
+    cursor: pointer;
+}
+.icon{
+    font-size: 15px;
+    text-align: center;
+    color: #3BB77E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px 0 0;
+}
+style:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+
+li{
+    color: #253D4E;
+    font-size: 15px;
+    margin: 5px 0;
+}
+li:hover{
+    cursor: pointer;
+    color: #5abb49;
+}
+p{
+    margin: 5px 0;
+    font-size: 15px;
+}
+.footer-end{
+    height: 70px;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #3BB77E;
+}
+.footer-end-content{
+    color:#696969;
+    font-size: 15px;
+    text-align: center;
+}
+.footer-end-content:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+img{
+    display: block;
+    width: 58px;
+    height: 28px; 
+    margin: 0 5px;
+}
+img:hover{
+    cursor: pointer;
+}

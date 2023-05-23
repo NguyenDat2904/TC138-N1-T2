@@ -80,25 +80,25 @@ function eventUser() {
   let interDuce = document.querySelector(".interducePage");
   interDuce.addEventListener("click", () => {
     homePage.classList.add("active");
-    interPage.classList.remove("active");
-    signupPage.classList.add("active");
-    signinPage.classList.add("active");
+    interPage.classList.add("active");
+    signupPage.classList.remove("active");
+    signinPage.classList.remove("active");
   });
 
   // Home Page
   let home_page = document.querySelector(".homePage");
   home_page.addEventListener("click", () => {
     homePage.classList.remove("active");
-    interPage.classList.add("active");
-    signupPage.classList.add("active");
-    signinPage.classList.add("active");
+    interPage.classList.remove("active");
+    signupPage.classList.remove("active");
+    signinPage.classList.remove("active");
   });
 
   // Signin
   let signIn = document.querySelector(".sign_in");
   signIn.addEventListener("click", () => {
     signinPage.classList.remove("active");
-    interPage.classList.add("active");
+    interPage.classList.remove("active");
     homePage.classList.add("active");
     signupPage.classList.add("active");
   });
@@ -107,7 +107,7 @@ function eventUser() {
   signUn.addEventListener("click", () => {
     signupPage.classList.remove("active");
     signinPage.classList.add("active");
-    interPage.classList.add("active");
+    interPage.classList.remove("active");
     homePage.classList.add("active");
   });
 }
@@ -125,16 +125,13 @@ function renderNew() {
     const html = subArrs[i]
       .map((item) => {
         let a = +item.price;
-        let formatA = a.toLocaleString("vi-VN", {
-          style: "currency",
-          currency: "VND",
-        });
+        let formatA = priceToString(a)
         return /*html*/ `
         <article class="newpro"> 
           <div class="box_img">
             <img class="img_prod" src= ${item.img} alt="">
             <div class="box_discount div_empty">${item.discount}</div>
-            </div>
+          </div>
               <div class="box_infor">
                 <h3 class="hover_green name_prod">${item.name}</h3>
                 <div class="box_star">
@@ -159,6 +156,99 @@ function renderNew() {
     outputNew = html;
     repeatBox[i].innerHTML = outputNew;
   }
+}
+// Render product popalur
+function renderPopalur() {
+  let productPopalur = document.querySelector(".product_popalur");
+  let html = newProducts
+    .map((item) => {
+      let a = +item.price;
+      let formatA = priceToString(a);
+      return /*html*/ `
+      <div class="col col-6 col-lg-3 py-2">
+          <div class="card card_popalur d-flex flex-column align-items-center">
+            <div class="card-img poplaur_img">
+              <img src=${item.img} class="img_prod" alt="..." />
+              <div class="box_discount div_empty">${item.discount}</div>
+            </div>
+                <div class="card-body w-100">
+                    <h5 class="card-title popalur_title hover_green name_prod">${item.name}</h5>
+                    <div class="box_star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="cart-money box_cart">
+                        <p class="card-text price_prod">${formatA}</p>
+                        <span>${item.priceOld}</span>
+                        <i class="fa-solid fa-basket-shopping btn_cart"></i>
+                    </div>
+                </div>
+            </div>
+          </div> 
+    `;
+    })
+    .join("");
+  productPopalur.innerHTML = html;
+}
+
+function renderSelling() {
+  let sellingProduct = document.querySelector(".sell_carousel");
+  let html = newProducts.map((item) => {
+    let a = +item.price;
+    let formatA = priceToString(a);
+    return /*html*/ `
+                                          <div class="col">
+                                        <div class="card sell_card">
+                                            <div class="card-img sell_img">
+                                                <img src=${item.img} class="img_prod" alt="..." />
+                                                <div class="box_discount div_empty">${item.discount}</div>
+                                            </div>
+                                            <div class="card-body sell_list-body">
+                                                <h5 class=" sell_title name_prod">${item.name}</h5>
+                                                <div class="box_star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <div class="box_cart d-flex align-items-center ">
+                                                    <p class="box_money sell_text price_prod">${formatA}</p>
+                                                    <span>${item.priceOld}</span>
+                                                </div>
+                                                <div class="sell_line"></div>
+                                                <p class="sell_status">Còn hàng</p>
+                                                <div class="box_cart">
+                                                  <button class="btn_cart sell_btn dmc_btn price_prod">
+                                                    <i class="fa-solid fa-cart-plus"></i>
+                                                    <span>Thêm giỏ hàng</span>
+                                                </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    `;
+  }).join("");
+  sellingProduct.innerHTML = html
+}
+// SlideShow Selling
+
+function slideSell() {
+  let carousel = document.querySelector(".sell_carousel");
+
+  carousel.addEventListener("mousemove", dragging);
+}
+
+// String to VND
+function priceToString(number) {
+  let numberString = number.toLocaleString("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
+  return numberString;
 }
 
 function addCart() {
@@ -200,10 +290,7 @@ function renderCart(button) {
       numberCart.innerHTML = index + 1;
       let b = parseFloat(item.price.replace(/\./g, "").replace("₫", ""));
       let c = b * item.quantity;
-      let formatC = c.toLocaleString("vi-VN", {
-        style: "currency",
-        currency: "VND",
-      });
+      let formatC = priceToString(c);
       total += c;
       return /*html*/ `
           <article class="boder_bottom buy_product">
@@ -227,46 +314,40 @@ function renderCart(button) {
     })
     .join("");
   formCart.innerHTML = renderProd;
-  let totalEnd = total.toLocaleString("vi-VN", {
-    style: "currency",
-    currency: "VND",
-  });
+  let totalEnd = priceToString(total);
   let totalMoney = document.querySelector(".user_total-money span");
   totalMoney.innerHTML = totalEnd;
 }
 function start() {
   eventUser();
+  renderPopalur();
+  renderSelling();
+  // slideSell();
   renderNew();
   addCart();
 }
 start();
 // Hung
-const loginForm=document.getElementById("login")
-const errorEl=document.querySelector(".errorMsg")
+const loginForm = document.getElementById("login");
+const errorEl = document.querySelector(".errorMsg");
 
-loginForm.addEventListener("submit", function(event){
-    event.preventDefault();
-    const emailEl=loginForm.email;
-    const emaill=emailEl.value;
-    const relexEmail=/^\w{4,}@\w+\.\w+$/;
-    if(emaill===" ")
-    {
-        errorEl.innerHTML="Vui lòng không để chống thông tin";
-        emailEl.classList.add("errorborder");
-    }
-    else if(emaill.length<8)
-    {
-        errorEl.innerHTML="Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
-        emailEl.classList.add("errorborder");
-    }
-    else if(relexEmail.test(emaill)===false)
-    {
-        errorEl.innerHTML="Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
-        emailEl.classList.add("errorborder");
-    }
-    else
-    {
-        errorEl.innerHTML="";
-        emailEl.classList.remove("errorborder");
-    }
+loginForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const emailEl = loginForm.email;
+  const emaill = emailEl.value;
+  const relexEmail = /^\w{4,}@\w+\.\w+$/;
+  if (emaill === " ") {
+    errorEl.innerHTML = "Vui lòng không để chống thông tin";
+    emailEl.classList.add("errorborder");
+  } else if (emaill.length < 8) {
+    errorEl.innerHTML = "Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
+    emailEl.classList.add("errorborder");
+  } else if (relexEmail.test(emaill) === false) {
+    errorEl.innerHTML =
+      "Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
+    emailEl.classList.add("errorborder");
+  } else {
+    errorEl.innerHTML = "";
+    emailEl.classList.remove("errorborder");
+  }
 });

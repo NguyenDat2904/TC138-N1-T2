@@ -71,6 +71,83 @@ input::placeholder {
 .boder_bottom {
     border-bottom: 1px solid #ececec;
 }
+.title_h1{
+    font-size: 32px;
+    font-weight: var(--fw7);
+    color: #253D4E;
+    margin-bottom: 0;
+}
+.selling_card{
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    position: relative;
+}
+.selling_body{
+    position: absolute;
+    transform: translateX(0px) translateY(40px);
+    padding: 0px 20px 0px 20px;
+}
+.selling_title{
+    font-size: 30px;
+    color: #253D4E;
+    margin-bottom: 70px;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-weight: var(--fw7);
+}
+.selling_title:hover{
+    transform: translateY(-10px);
+}
+.sell_card{
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ececec;
+}
+
+.sell_title{
+    height: 46px;
+    font-size: 16px;
+    font-weight: var(--fw6);
+    margin-bottom: 8px;
+    font-family: "Montserrat";
+    transition: all 0.5s ease;
+    text-align: left;
+    color: #253D4E;
+    line-height: 23px;
+}
+.sell_line{
+    margin: 5px 0;
+    height: 5px;
+    width: 100%;
+    position: relative;
+    background-color: #e9e8e8;
+}
+.sell_line::before{
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 5px;
+    background-color: var(--background-green);
+    left: 0;
+    top: 0;
+}
+.sell_status{
+    padding: 5px 0 10px;
+}
+.sell_btn{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    background-color: var(--background-green);
+    height: 40px;
+    border-radius: 5px;
+    font-weight: var(--fw5);
+    transition: all 0.5s ease;
+    border: none;
+    color: var(--white-color);
+    font-family: "Montserrat";
+}
 /* END RESET CSS */
 
 /* Header - Đạt */
@@ -543,7 +620,7 @@ article >.box_infor{
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
 }
-.box_infor > .box_star > i {
+.box_star > i {
     font-size: 12px;
     color: #888;
 }
@@ -692,7 +769,7 @@ body{
     color: var(--white-color);
 }
 
-.card-text:hover{
+.card-img-overlay .card-text:hover{
     transform: translateY(-10px);
 }
 
@@ -712,9 +789,8 @@ body{
 
 .bgrImg{
     background-image: url(https://demo037131.web30s.vn/datafiles/web30s/upload/images/7101-7200/30S-03-7131/banner-10.png);
-    background-size: cover;
-    width:80%;
-    height:400px;
+    background-size: cover; 
+    height:100%;
     margin: 0 auto;
     border-radius:20px;
     
@@ -814,6 +890,107 @@ h4{
 .errorborder{
     border: 1px solid red;
 }
+
+/* PHỔ BIẾN */
+.popalur{
+    padding: 60px 0;
+}
+.popalur_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popalur_list > ul{
+    display: flex;
+} 
+.popalur_item{
+    padding: 7px 0 7px 20px;
+    font-size: 16px;
+    color: #253D4E;
+    font-weight: var(--fw6);
+}
+.product_popalur{
+    padding-top: 40px;
+}
+.card_popalur{
+    border-radius: 15px;
+    border: 1px solid #ececec;
+    overflow: hidden;
+}
+.poplaur_img{
+    position: relative;
+    height: 240px;
+    padding: 20px;
+
+}
+.poplaur_img img{
+    border-radius: 15px;
+}
+.popalur_title{
+    font-weight: var(--fw6);
+    font-size: 16px;
+    transition: all 0.5s ease;
+    margin-bottom: 8px;
+    font-family: "Montserrat";
+    color: #253D4E;
+    text-align: left;
+    line-height: 23px;
+    height: 46px;
+}
+.card-body .cart-money{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-money > .card-text{
+    color: var(--background-green);
+    margin-bottom: 0;
+}
+/* BÁN CHẠY */
+.product_selling{
+    padding-bottom: 60px;
+}
+.seliing_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.selling_all{
+    display: flex;
+    align-items: center;
+    color: #7E7E7E;
+    font-weight: var(--fw5);
+    transition: all 0.3s ease;
+}
+.selling_all > i{
+    padding: 2px 0 0 7px;
+}
+
+.sell_carousel{
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.row_left{
+    flex-basis: 25%;
+}
+.row_right {
+    overflow: hidden;
+    flex-basis: 75%;
+}
+.sell_img{
+    width: 308px;
+    height: 308px;
+}
+.sell_img > img{
+    width: 100%;
+}
+.sell_text{
+    font-size: 18px;
+    font-weight: var(--fw7);
+}
+
 @media (max-width: 840px) { 
     .card_Surrounded{
         grid-template-columns: 1fr ;

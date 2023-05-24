@@ -1198,3 +1198,155 @@ h4{
 
 
 }
+
+/* BEGIN CSS SIGN IN VŨ*/
+#signin_page.active {
+    display: block;
+
+  }
+  .signInPart{
+    display:grid;
+    gap:50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .contaier-signin{
+    padding: 50px 50px;
+  }
+  .signInForm{
+    display:flex;
+    flex-direction: column;
+    gap:24px ;
+  }
+  .SignInInf{
+    border:1px solid black;
+    border-radius: 5px;
+    width:100%;
+    margin-top:0;
+    padding :10px;
+    display:flex;
+    gap: 10px;
+    position: relative;
+  
+  }
+  .SignInPic{
+    
+    border-radius: 20px;
+  }
+  .Info{
+   width:600px;
+    border:none;
+    outline: none;
+  }
+  .box{
+    padding-left:10px;
+   
+  }
+  .icon{
+    color:#ec0015;
+   
+    position: absolute;
+    top:12px;
+  }
+  .SignInButton{
+   
+    border:none;
+   
+    display:flex;
+    gap:20px;
+  }
+  .login{
+    font-size: 18px;
+    width:180px;
+    border:none;
+    border-radius: 5px;
+    background-color: #00bc7f;
+    color:#fff;
+    padding:15px 20px;
+    transition: all 0.5s ease;
+  }
+  .login:hover{
+    background-color: #FDC040;
+  }
+  .frame{
+    position: absolute;
+    color:#ec0015;
+    font-size: 13px;
+    bottom: -23px;
+  }
+  .text{
+    border: white;
+  }
+  .forgetPass{
+    color: #00bc7f;
+    font-family: "Quicksand";
+    font-weight: 800;
+  }
+  .signUpNow{
+    color: #00bc7f;
+    font-family: "Quicksand";
+    font-weight: 800;
+  }
+  .linkSignUp{
+    transform: translateY(-70%);
+  }
+  .connective{
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+  }
+  .text1:hover{
+    color: #ffc107;
+  }
+  .text2{
+    color: #7E7E7E;
+  }
+  .text2:hover{
+    color: black;
+  }
+  .FB{
+    background-color: #3b5998;
+    border: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+  }
+  .FB:hover{
+    background-color: #ffc107;
+  }
+  .GG{
+    background-color: #dc4e41;
+    border: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+  }
+  .ZL{
+    background-color: #0591e9;
+    border: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+  }
+  .connective-container{
+    position: relative;
+  }
+  .ggForm{
+    transform: translateX(-30%);
+  }
+  .zlForm{
+    transform: translateX(-58%);
+  }
+  .icon-connect{
+    padding-right: 5px;
+  }
+ /* END CSS SIGN IN */

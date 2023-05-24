@@ -686,10 +686,13 @@ article >.box_infor{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
 }
+.signUp_container{
+    padding: 50px 0;
+}
 .signUp_page{
     display:flex;
     flex-direction: column;
-    gap:10px ;
+    gap:24px ;
 }
 .page{
     border:1px solid black;
@@ -709,8 +712,7 @@ article >.box_infor{
 .get{
    width:600px;
     border:none;
-    
-    
+    outline: none;
 }
 .min{
     padding-left:10px;
@@ -746,13 +748,16 @@ article >.box_infor{
     background-color: #00bc7f;
     color:#fff;
     padding:15px 20px;
+    transition: all 0.5s ease;
 }
 .log:hover{
     background-color: #FDC040;
 }
 .poot{
+    position: absolute;
     color:#ec0015;
-    font-size: 16px;
+    font-size: 13px;
+    bottom: -23px;
    
 }
 @media (max-width:1000px)
@@ -919,6 +924,7 @@ body{
     right: -30px;
     top:0;
     bottom:0;  
+    transition: all 0.5s ease;
 }
 .register:hover
 {

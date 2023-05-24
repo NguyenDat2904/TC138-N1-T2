@@ -4,7 +4,7 @@ const newProducts = [
     price: "36000",
     priceOld: "39.000 đ",
     discount: "-8%",
-    img: "/asset/img/spmoi/chuoi-say.jpg",
+    img: "./asset/img/spmoi/chuoi-say.jpg",
   },
   {
     name: "Khoai lang tím sấy",

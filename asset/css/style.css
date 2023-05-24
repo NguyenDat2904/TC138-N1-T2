@@ -159,7 +159,7 @@ input::placeholder {
     justify-content: space-between;
 }
 .header_logo > a{
-    background-image: url("/asset/img/logo/logo.png");
+    background-image: url("/picter/img/logo/logo.png");
     background-size: contain;
     background-position: 0% 0%;
     background-repeat: no-repeat;

@@ -600,6 +600,89 @@ article >.box_infor{
 #signup_page.active {
     display: none;
 }
+.gridSignUp{
+    display:grid;
+    gap:50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.signUp_page{
+    display:flex;
+    flex-direction: column;
+    gap:10px ;
+}
+.page{
+    border:1px solid black;
+    border-radius: 5px;
+    width:100%;
+    margin-top:0;
+    padding :10px;
+    display:flex;
+    gap: 10px;
+    position: relative;
+
+}
+.pct{
+    
+    border-radius: 20px;
+}
+.get{
+   width:600px;
+    border:none;
+    
+    
+}
+.min{
+    padding-left:10px;
+   
+}
+.bu{
+    color:#ec0015;
+   
+    position: absolute;
+    top:12px;
+}
+.a
+{
+    border:none;
+}
+.b{
+   
+    border:none;
+   
+    display:flex;
+    gap:20px;
+}
+.link{
+    color:#00bc7f;
+    font-size: 16px;
+    font-weight: 600;
+}
+.log{
+    font-size: 18px;
+    width:180px;
+    border:none;
+    border-radius: 5px;
+    background-color: #00bc7f;
+    color:#fff;
+    padding:15px 20px;
+}
+.log:hover{
+    background-color: #FDC040;
+}
+.poot{
+    color:#ec0015;
+    font-size: 16px;
+   
+}
+@media (max-width:1000px)
+{
+    .gridSignUp{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
 /* dang nhap */
 #signin_page {
     display: block;

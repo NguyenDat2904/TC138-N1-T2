@@ -689,9 +689,129 @@ function start() {
   addCart();
 }
 start();
+ 
+const tosignUp_page=document.querySelector(".signUp_page");
+const p_get=document.querySelectorAll(".poot");
+tosignUp_page.addEventListener("click", function(e){
+  e.preventDefault();
+  const fullNameEl=tosignUp_page.fullname;
+  const fullName=fullNameEl.value;
+  if(fullName==="")
+  {
+    p_get[0].innerHTML="Bạn vui lòng nhập đầy đủ họ và tên!";
+   
+  } 
+  else{
+    p_get[0].innerHTML="";
+    
+  }
+  const phoneEl=tosignUp_page.phoneNumber;
+  const phone=phoneEl.value;
+  if(phone==="")
+  {
+    p_get[1].innerHTML="Bạn vui lòng nhập số điện thoại!";
+   
+  }
+  else if(isNaN()===true)
+  {
+    p_get[1].innerHTML="Vui lòng nhập số!";
+    
+  }
+  else if(phone.length !==9)
+  {
+    p_get[1].innerHTML="Số của bạn bị sai vui lòng nhập lại!";
+    
+  }
+  else{
+    p_get[1].innerHTML="";
+    
+  }
+  const toaddress=tosignUp_page.address;
+  const toadd=toaddress.value;
+  if(toadd==="")
+  {
+    p_get[2].innerHTML=" Vui lòng nhập địa chỉ!";
+  
+  }
+  else{
+    p_get[2].ỉnnerHTML="";
+   
+  }
+  const fullEmailEl=tosignUp_page.fullemail;
+  const fullEmail=fullEmailEl.value;
+  const relexfullEmail=/^\w{4,}@\w+\.\w+$/;
+  if(fullEmail===" ")
+  {
+      p_get[3].innerHTML="Vui lòng nhập email";
+     
+  }
+  else if(fullEmail.length<8)
+  {
+      p_get[3].innerHTML="Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
+    
+  }
+  else if(relexfullEmail.test(fullEmail)===false)
+  {
+      p_get[3].innerHTML="Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
+    
+  }
+  else
+  {
+      p_get[3].innerHTML="";
+    
+  }
+  const touserNameEl=tosignUp_page.userName;
+  const touserName=touserNameEl.value;
+  if(touserName==="")
+  {
+    p_get[4].innerHTML="Vui lòng nhập tên truy cập!";
+   
+  }
+  else{
+    p_get[4].innerHTML="";
+   
+  }
+  const topasswordEl=tosignUp_page.password;
+  const topassword=topasswordEl.value;
+  if(topassword==="")
+  {
+    p_get[5].innerHTML="Vui lòng nhập mật khẩu!";
+    
+  }
+  else if(topassword.length<5)
+  {
+    p_get[5].innerHTML="Bảo mật kém vui lòng nhập mật khẩu dài hơn!";
+    
+  }
+  else{
+    p_get[5].innerHTML="";
+    
+  }
+  const toconfirmPasswordEl=tosignUp_page.confirmPassword;
+  const toconfirmPassword=toconfirmPasswordEl.value;
+  if(toconfirmPassword==="")
+  {
+    p_get[6].innerHTML="Vui lòng xác nhận mật khẩu!";
+   
+  }
+  else if(toconfirmPassword !== topassword)
+  {
+    p_get[6].innerHTML="Xác nhận không đúng vui lòng nhập lại!";
+    
+  }
+  else{
+    p_get[6].innerHTML="";
+    
+  }
+});
 // Hung
+<<<<<<< HEAD
+const loginForm=document.getElementById("login");
+const errorEl=document.querySelector(".errorMsg");
+=======
 const loginForm = document.getElementById("login");
 const errorEl = document.querySelector(".errorMsg");
+>>>>>>> 27074aa17ec09879f0939cecafa501d9e4bab7f3
 
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();

@@ -71,6 +71,83 @@ input::placeholder {
 .boder_bottom {
     border-bottom: 1px solid #ececec;
 }
+.title_h1{
+    font-size: 32px;
+    font-weight: var(--fw7);
+    color: #253D4E;
+    margin-bottom: 0;
+}
+.selling_card{
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    position: relative;
+}
+.selling_body{
+    position: absolute;
+    transform: translateX(0px) translateY(40px);
+    padding: 0px 20px 0px 20px;
+}
+.selling_title{
+    font-size: 30px;
+    color: #253D4E;
+    margin-bottom: 70px;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-weight: var(--fw7);
+}
+.selling_title:hover{
+    transform: translateY(-10px);
+}
+.sell_card{
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ececec;
+}
+
+.sell_title{
+    height: 46px;
+    font-size: 16px;
+    font-weight: var(--fw6);
+    margin-bottom: 8px;
+    font-family: "Montserrat";
+    transition: all 0.5s ease;
+    text-align: left;
+    color: #253D4E;
+    line-height: 23px;
+}
+.sell_line{
+    margin: 5px 0;
+    height: 5px;
+    width: 100%;
+    position: relative;
+    background-color: #e9e8e8;
+}
+.sell_line::before{
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 5px;
+    background-color: var(--background-green);
+    left: 0;
+    top: 0;
+}
+.sell_status{
+    padding: 5px 0 10px;
+}
+.sell_btn{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    background-color: var(--background-green);
+    height: 40px;
+    border-radius: 5px;
+    font-weight: var(--fw5);
+    transition: all 0.5s ease;
+    border: none;
+    color: var(--white-color);
+    font-family: "Montserrat";
+}
 /* END RESET CSS */
 
 /* Header - Đạt */
@@ -463,6 +540,9 @@ nav{
 
 
 /* PRODUCT NEW */
+.productnew{
+    padding-bottom: 60px;
+}
 .cart_product{
     border: none;
 }
@@ -540,7 +620,7 @@ article >.box_infor{
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
 }
-.box_infor > .box_star > i {
+.box_star > i {
     font-size: 12px;
     color: #888;
 }
@@ -588,17 +668,17 @@ article >.box_infor{
 
 /* gioi thieu */
 #interduce_page{
-    display: block;
+    display: none;
 }
 #interduce_page.active {
-    display: none;
+    display: block;
 }
 /* dang ki */
 #signup_page {
-    display: block;
+    display: none;
 }
 #signup_page.active {
-    display: none;
+    display: block;
 }
 .gridSignUp{
     display:grid;
@@ -685,10 +765,10 @@ article >.box_infor{
 
 /* dang nhap */
 #signin_page {
-    display: block;
+    display: none;
 }
 #signin_page.active {
-    display: none;
+    display: block;
 }
 body{
     font-family: 'Quicksand';
@@ -700,18 +780,26 @@ body{
     padding: 60px 0;
     
 }
-h1{
-    height: auto;
-    width: auto;
+.dmc h1{
     color: #253D4E;
     font-size: 32px;
-    font-family: "Quicksand";
-    top: unset;
-    left: unset;
     font-weight: 700;
     margin: 0px 30px 40px 0px;
     display: block;
+}
+.dmc_card{
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card-img-overlay{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.card-img-overlay .card-text{
+    transition: all 0.5s ease-out;
+    cursor: pointer;
 }
 .card-dcm-top{
     height: 200px;
@@ -725,9 +813,6 @@ h1{
     cursor: pointer;
 }
 
-.card-dcm-top:hover .card-title{
-    color: #3BB77E;
-}
 .card-img-top{
     display: flex;
     position: relative;
@@ -741,7 +826,9 @@ h1{
 }
 .card-title{
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: var(--fw7);
+    color: #253D4E;
 }
 .card-text{
     color: black;
@@ -751,25 +838,24 @@ h1{
     line-height: 27px;
     font-size: 20px;
 }
-.btn{
-    background-color: #3BB77E;
-} 
-.btn:hover{
+.dmc_btn{
+    color: var(--white-color);
+    font-size: 13px;
+    padding: 6px 15px;
+    background-color: var(--background-green);
+    transition: all 0.3s ease;
+    font-weight: var(--fw7);
+}
+
+.dmc_btn:hover{
     background-color: #FDC040;
+    color: var(--white-color);
 }
-.text-bg-dark{
-    height: 300px;
-}
-.card-img{
-    height: 100%;
-}
-.card-text:hover{
-    color: #3BB77E;
+
+.card-img-overlay .card-text:hover{
     transform: translateY(-10px);
 }
-.fa-solid{
-    font-size: 12px;
-}
+
 .swiper-click{
     padding-top: 20px;
     width: 175px;
@@ -786,46 +872,34 @@ h1{
 
 .bgrImg{
     background-image: url(https://demo037131.web30s.vn/datafiles/web30s/upload/images/7101-7200/30S-03-7131/banner-10.png);
-    background-size: cover;
-    width:80%;
-    height:400px;
+    background-size: cover; 
+    height:100%;
     margin: 0 auto;
     border-radius:20px;
     
 }
-.Surrounded{
-    
-    width:100%;
-    height:480px;
+.Surrounded{ 
+    width: auto;
+    height:100%;
     margin: 0 auto;
-    padding:0px 40px;
+    padding:70px 50px 0 50px;
     bottom:0;
     display:grid;
     flex-direction: column;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 400px ;
-    position:relative;
-
 }
 .imgg{
-    position:absolute;
-    bottom:1px;
-
-
 }
-.list{
+
+.Surrounded .tip{
     position: relative;
 }
-.tip{
-    padding:16% 10% ;
-
-}
 .lookfor{
-   
+    width: 85%;
     position:relative;
 }
 .search{
-    width:100%;
+    width: 100%;
     padding: 20px 10px 20px 20px;
     outline: none;
     border:none;
@@ -844,21 +918,21 @@ h1{
     position: absolute;
     right: -30px;
     top:0;
-    bottom:0;
-    
-   
-   
+    bottom:0;  
 }
 .register:hover
 {
     background-color:#FDC040;
 }
-h2{
+.Surrounded h2{
     font-size: 32px;
     font-weight: 700;
+    margin-bottom: 10px;
+    color: #253D4E;
 }
-p{
+.tip > p{
     font-size: 18px;
+    margin-bottom: 45px;
 }
 .card_Surrounded{
     margin-top: 50px;
@@ -890,6 +964,8 @@ h4{
     width:50px;
 }
 .errorMsg{
+    position: absolute;
+    bottom: 30px;
     font-size: 16px;
     color:red;
     font-weight:500;
@@ -897,6 +973,107 @@ h4{
 .errorborder{
     border: 1px solid red;
 }
+
+/* PHỔ BIẾN */
+.popalur{
+    padding: 60px 0;
+}
+.popalur_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popalur_list > ul{
+    display: flex;
+} 
+.popalur_item{
+    padding: 7px 0 7px 20px;
+    font-size: 16px;
+    color: #253D4E;
+    font-weight: var(--fw6);
+}
+.product_popalur{
+    padding-top: 40px;
+}
+.card_popalur{
+    border-radius: 15px;
+    border: 1px solid #ececec;
+    overflow: hidden;
+}
+.poplaur_img{
+    position: relative;
+    height: 240px;
+    padding: 20px;
+
+}
+.poplaur_img img{
+    border-radius: 15px;
+}
+.popalur_title{
+    font-weight: var(--fw6);
+    font-size: 16px;
+    transition: all 0.5s ease;
+    margin-bottom: 8px;
+    font-family: "Montserrat";
+    color: #253D4E;
+    text-align: left;
+    line-height: 23px;
+    height: 46px;
+}
+.card-body .cart-money{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-money > .card-text{
+    color: var(--background-green);
+    margin-bottom: 0;
+}
+/* BÁN CHẠY */
+.product_selling{
+    padding-bottom: 60px;
+}
+.seliing_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.selling_all{
+    display: flex;
+    align-items: center;
+    color: #7E7E7E;
+    font-weight: var(--fw5);
+    transition: all 0.3s ease;
+}
+.selling_all > i{
+    padding: 2px 0 0 7px;
+}
+
+.sell_carousel{
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.row_left{
+    flex-basis: 25%;
+}
+.row_right {
+    overflow: hidden;
+    flex-basis: 75%;
+}
+.sell_img{
+    width: 308px;
+    height: 308px;
+}
+.sell_img > img{
+    width: 100%;
+}
+.sell_text{
+    font-size: 18px;
+    font-weight: var(--fw7);
+}
+
 @media (max-width: 840px) { 
     .card_Surrounded{
         grid-template-columns: 1fr ;
@@ -930,3 +1107,130 @@ h4{
 
     
  }
+ .footer{
+    width: 1200px;
+    background-color: white;
+    margin: auto auto;
+}
+.footer-item{
+    height: 100%;
+    width: var(--width-container);
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0px;
+    flex: 1;
+}
+.footer-item.diachi{
+    display: flex;
+    flex-direction: column;
+}
+.footer-item.dichvu{
+    display: flex;
+    flex-direction: column;
+}
+.footer-item.menu{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    font-size: 22px;
+    margin: 30px 0;
+    padding: auto;
+    color: #253D4E;
+}
+.footer-item.sanpham{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-location{
+    display: flex;
+}
+.item-tel{
+    display: flex;
+}
+.item-tel:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+.item-web{
+    display: flex;
+}
+.item-web:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+.item-time{
+    display: flex;
+}
+.item-time:hover{
+    cursor: pointer;
+}
+.img-logo{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/files/logo.png?t=1670225696);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 185px;
+    height: 58px;
+    margin: 0 0 20px;
+}
+.img-logo:hover{
+    cursor: pointer;
+}
+.icon{
+    font-size: 15px;
+    text-align: center;
+    color: #3BB77E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px 0 0;
+}
+style:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+
+li{
+    color: #253D4E;
+    font-size: 15px;
+    margin: 5px 0;
+}
+li:hover{
+    cursor: pointer;
+    color: #5abb49;
+}
+p{
+    margin: 5px 0;
+    font-size: 15px;
+}
+.footer-end{
+    height: 70px;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #3BB77E;
+}
+.footer-end-content{
+    color:#696969;
+    font-size: 15px;
+    text-align: center;
+}
+.footer-end-content:hover{
+    cursor: pointer;
+    color: #3BB77E;
+}
+img{
+    display: block;
+    width: 58px;
+    height: 28px; 
+    margin: 0 5px;
+}
+img:hover{
+    cursor: pointer;
+}

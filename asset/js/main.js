@@ -515,10 +515,15 @@ function renderPopalur(arrPopalur) {
       let formatA = priceToString(a);
       return /*html*/ `
       <div class="col col-6 col-lg-3 py-2">
-          <div class="card card_popalur d-flex flex-column align-items-center">
+          <div class="card card_popalur d-flex flex-column align-items-center papolur_hover">
             <div class="card-img poplaur_img">
               <img src=${item.img} class="img_prod" alt="..." />
               <div class="box_discount div_empty">${item.discount}</div>
+              <div class="popalur_box-icon">
+                <i class="fa-solid fa-shuffle popalur_icon"></i>
+                <i class="fa-regular fa-heart popalur_icon"></i>
+                <i class="fa-regular fa-eye popalur_icon"></i>
+              </div>
             </div>
                 <div class="card-body w-100">
                     <h5 class="card-title popalur_title hover_green name_prod">${item.name}</h5>
@@ -551,10 +556,15 @@ function renderSelling() {
       let formatA = priceToString(a);
       return /*html*/ `
                                           <div class="col">
-                                        <div class="card sell_card">
-                                            <div class="card-img sell_img">
-                                                <img src=${item.img} class="img_prod" alt="..." />
+                                        <div class="card sell_card papolur_hover">
+                                            <div class="card-img sell_img poplaur_img">
+                                                <img src=${item.img} class="img_prod " alt="..." />
                                                 <div class="box_discount div_empty">${item.discount}</div>
+                                                <div class="popalur_box-icon">
+                                                  <i class="fa-solid fa-shuffle popalur_icon"></i>
+                                                  <i class="fa-regular fa-heart popalur_icon"></i>
+                                                  <i class="fa-regular fa-eye popalur_icon"></i>
+                                                </div>
                                             </div>
                                             <div class="card-body sell_list-body">
                                                 <h5 class=" sell_title name_prod">${item.name}</h5>

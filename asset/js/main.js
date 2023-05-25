@@ -373,14 +373,17 @@ function eventUser() {
   });
 
   // GIOI THIEU
-  let interPage = document.querySelector("#interduce_page");
   let homePage = document.querySelector("#home_page");
+  let interPage = document.querySelector("#interduce_page");
+  let contactPage = document.querySelector("#contact_page");
   let signupPage = document.querySelector("#signup_page");
   let signinPage = document.querySelector("#signin_page");
   let interDuce = document.querySelector(".interducePage");
+  // gioi thieu
   interDuce.addEventListener("click", () => {
     homePage.classList.add("active");
     interPage.classList.add("active");
+    contactPage.classList.remove("active");
     signupPage.classList.remove("active");
     signinPage.classList.remove("active");
   });
@@ -389,6 +392,18 @@ function eventUser() {
   let home_page = document.querySelector(".homePage");
   home_page.addEventListener("click", () => {
     homePage.classList.remove("active");
+    interPage.classList.remove("active");
+    signupPage.classList.remove("active");
+    signinPage.classList.remove("active");
+    contactPage.classList.remove("active");
+  });
+
+  // Lien He
+  let contactBtn = document.querySelector(".contactPage");
+  contactBtn.addEventListener("click", () => {
+    console.log("click dc");
+    contactPage.classList.add("active");
+    homePage.classList.add("active");
     interPage.classList.remove("active");
     signupPage.classList.remove("active");
     signinPage.classList.remove("active");
@@ -401,6 +416,7 @@ function eventUser() {
     interPage.classList.remove("active");
     homePage.classList.add("active");
     signinPage.classList.add("active");
+    contactPage.classList.remove("active");
   });
   // Sigup
   let signUn = document.querySelector(".sign_up");
@@ -409,6 +425,7 @@ function eventUser() {
     signupPage.classList.add("active");
     interPage.classList.remove("active");
     homePage.classList.add("active");
+    contactPage.classList.remove("active");
   });
 }
 // Render product new

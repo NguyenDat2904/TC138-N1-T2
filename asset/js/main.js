@@ -539,7 +539,7 @@ function renderPopalur(arrPopalur) {
                         <span>${item.priceOld}</span>
                         <i class="fa-solid fa-basket-shopping btn_cart"></i>
                     </div>
-                </div>
+                </div
             </div>
           </div> 
     `;
@@ -819,3 +819,88 @@ function start() {
   validateSignup();
 }
 start();
+ 
+
+// liên hệ 1
+const enterInformationWrongEl=document.querySelector(".enterInformationWrong");
+const wrongEl=document.querySelectorAll(".wrong");
+enterInformationWrongEl.addEventListener("submit", function(rong){
+  rong.preventDefault();
+  const fullEnterNameEl=enterInformationWrongEl.namexl;
+  const fullEnterName=fullEnterNameEl.value;
+  if(fullEnterName==="")
+  {
+   wrongEl[0].innerHTML="Bạn vui lòng nhập đầy đủ họ và tên!";
+   
+  } 
+  else{
+   wrongEl[0].innerHTML="";
+    
+  }
+  const fullEnterEmailEl=enterInformationWrongEl.emailxl;
+  const fullEnterEmail=fullEnterEmailEl.value;
+  const relexfullEnterEmail=/^\w{4,}@\w+\.\w+$/;
+  if(fullEnterEmail===" ")
+  {
+     wrongEl[1].innerHTML="Vui lòng nhập email";
+     
+  }
+  else if(fullEnterEmail.length<8)
+  {
+     wrongEl[1].innerHTML="Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
+    
+  }
+  else if(relexfullEnterEmail.test(fullEnterEmail)===false)
+  {
+     wrongEl[1].innerHTML="Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
+    
+  }
+  else
+  {
+     wrongEl[1].innerHTML="";
+  }
+
+  const enterphoneEl=enterInformationWrongEl.numberxl;
+  const enterphone=enterphoneEl.value;
+  if(enterphone==="")
+  {
+   wrongEl[2].innerHTML="Bạn vui lòng nhập số điện thoại!";
+   
+  }
+  else if(isNaN()===true)
+  {
+   wrongEl[2].innerHTML="Vui lòng nhập số!";
+    
+  }
+  else if(enterphone.length !==9)
+  {
+   wrongEl[2].innerHTML="Số của bạn bị sai vui lòng nhập lại!";
+    
+  }
+  else{
+   wrongEl[2].innerHTML="";
+    
+  }
+  const toEnteraddress=enterInformationWrongEl.addressxl;
+  const toEnteradd=toEnteraddress.value;
+  if(toEnteradd==="")
+  {
+   wrongEl[3].innerHTML=" Vui lòng nhập địa chỉ!";
+  
+  }
+  else{
+   wrongEl[3].ỉnnerHTML="";
+   
+  }
+  const totextareaxlEl=enterInformationWrongEl.textareaxl;
+  const totextareaxl=totextareaxlEl.value;
+  if(totextareaxl==="")
+  {
+    wrongEl[4].innerHTML="Vui lòng nhập nội dung";
+  }
+  else
+  {
+    wrongEl[4].innerHTML="";
+  }
+  
+});

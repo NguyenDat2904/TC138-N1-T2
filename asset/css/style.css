@@ -148,6 +148,15 @@ input::placeholder {
     color: var(--white-color);
     font-family: "Montserrat";
 }
+.papolur_hover:hover{
+    transition: all 0.5s ease;
+    border: 1px solid var(--background-green);
+    box-shadow: rgba(0, 0, 0, 0.05) 5px 5px 15px;
+}
+.papolur_hover:hover .poplaur_img > img{
+    /* opacity: 0.8; */
+}
+
 /* END RESET CSS */
 
 /* Header - Đạt */
@@ -1102,6 +1111,52 @@ h4{
     padding: 20px;
 
 }
+.popalur_box-icon{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: faleIcon 0.5s;
+}
+.papolur_hover:hover .popalur_box-icon {
+    display: flex;
+    
+}
+@keyframes faleIcon{
+    0%{
+        opacity: 0;
+        left: 45%;
+    }
+    100%{
+        opacity: 1;
+        left: 50%;
+    }
+}
+.popalur_icon:hover{
+    transition: all 0.5s ease;
+    color: var(--background-origin);
+    cursor: pointer;
+}
+.popalur_icon{
+    width: 40px;
+    color: var(--background-green);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    height: 40px;
+    border: 1px solid var(--background-green);
+    transition: all 0.3s ease;
+}
+.popalur_icon:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.popalur_icon:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
 .poplaur_img img{
     border-radius: 15px;
 }
@@ -1432,27 +1487,24 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Quicksand";
-    font-size: 16px;
-    margin: 20px 0;
+    padding: 50px 0;
 }
 .introduce-container-begin{
-    width: 1200px;
-    height: 100%;
     display: flex;
-    flex-direction: row;
+    gap: 50px;
     justify-content: space-between;
     align-items: center;
 }
 .introduce-begin-img{
-    width: 600px;
+    flex-basis: 50%;
     height: 683px;
     border-radius: 20px;
 }
 .introduce-begin-content{
-    width: 550px;
+    flex-basis: 50%; 
 }
 .introduce-content-img{
+    margin-top: 20px;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -1472,6 +1524,46 @@ h4{
     width: 170px;
     height: 170px;
 }
-p{
-    margin: 0 0 15px;
+.about_person{
+    position: relative;
+    background-image: url(https://demo037131.web30s.vn/datafiles/web30s/upload/images/7101-7200/30S-03-7131/about-9.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 70px 30px;
+    width: 100%;
+    display: flex;
+    gap: 25px;
+}
+.about_person::before{
+    position: absolute;
+    content: "";
+    background-color: rgba(75, 103, 90, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.about{
+    padding-top: 50px;
+}
+.about_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.number_person{
+    color: var(--white-color);
+    font-size: 60px;
+    font-weight: var(--fw7);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.text_person{
+    text-align: center;
+    font-size: 20px;
+    font-weight: var(--fw6);
+    color: var(--white-color);
+
 }

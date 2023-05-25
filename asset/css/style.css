@@ -680,6 +680,16 @@ article >.box_infor{
 #signup_page.active {
     display: block;
 }
+
+/* liên hệ */
+
+#contact_page{
+    display: none;
+}
+#contact_page.active {
+    display: block;
+}
+
 .gridSignUp{
     display:grid;
     gap:50px;
@@ -893,8 +903,7 @@ body{
     flex-direction: column;
     grid-template-columns: 1fr 1fr;
 }
-.imgg{
-}
+
 
 .Surrounded .tip{
     position: relative;
@@ -1211,15 +1220,22 @@ h4{
     grid-template-rows: auto;
   }
   .contaier-signin{
-    padding: 50px 50px;
+    padding: 50px 0;
   }
+  .Sign_title{
+    color: #253D4E;
+    font-size: 35px;
+    font-weight: var(--fw7);
+    margin-bottom: 30px;
+  }
+
   .signInForm{
     display:flex;
     flex-direction: column;
-    gap:24px ;
+    gap:25px ;
   }
   .SignInInf{
-    border:1px solid black;
+    border:1px solid #ececec;
     border-radius: 5px;
     width:100%;
     margin-top:0;
@@ -1249,9 +1265,7 @@ h4{
     top:12px;
   }
   .SignInButton{
-   
     border:none;
-   
     display:flex;
     gap:20px;
   }
@@ -1291,60 +1305,42 @@ h4{
     transform: translateY(-70%);
   }
   .connective{
+    color: var(--white-color);
     border-radius: 5px;
     width: 200px;
     height: 50px;
   }
   .text1:hover{
-    color: #ffc107;
+    color: var(--background-origin);
   }
-  .text2{
-    color: #7E7E7E;
-  }
-  .text2:hover{
-    color: black;
+  .sign_btn{
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 400;
+        transition: all 300ms ease;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        width: 100%;
   }
   .FB{
     background-color: #3b5998;
-    border: white;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 150px;
+    
   }
+   .ZL:hover, 
+   .GG:hover,
   .FB:hover{
     background-color: #ffc107;
   }
   .GG{
     background-color: #dc4e41;
-    border: white;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 150px;
   }
   .ZL{
     background-color: #0591e9;
-    border: white;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 150px;
   }
   .connective-container{
     position: relative;
-  }
-  .ggForm{
-    transform: translateX(-30%);
-  }
-  .zlForm{
-    transform: translateX(-58%);
   }
   .icon-connect{
     padding-right: 5px;

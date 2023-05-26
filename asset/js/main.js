@@ -376,16 +376,18 @@ function eventUser() {
   let homePage = document.querySelector("#home_page");
   let interPage = document.querySelector("#interduce_page");
   let contactPage = document.querySelector("#contact_page");
+  let healthyPage = document.querySelector("#healthy_page");
   let signupPage = document.querySelector("#signup_page");
   let signinPage = document.querySelector("#signin_page");
-  let interDuce = document.querySelector(".interducePage");
   // gioi thieu
+  let interDuce = document.querySelector(".interducePage");
   interDuce.addEventListener("click", () => {
     homePage.classList.add("active");
     interPage.classList.add("active");
     contactPage.classList.remove("active");
     signupPage.classList.remove("active");
     signinPage.classList.remove("active");
+    healthyPage.classList.remove("active");
   });
 
   // Home Page
@@ -396,17 +398,28 @@ function eventUser() {
     signupPage.classList.remove("active");
     signinPage.classList.remove("active");
     contactPage.classList.remove("active");
+    healthyPage.classList.remove("active");
   });
 
   // Lien He
   let contactBtn = document.querySelector(".contactPage");
   contactBtn.addEventListener("click", () => {
-    console.log("click dc");
     contactPage.classList.add("active");
     homePage.classList.add("active");
     interPage.classList.remove("active");
     signupPage.classList.remove("active");
     signinPage.classList.remove("active");
+    healthyPage.classList.remove("active");
+  });
+  // Song khoe
+  let healthyBtn = document.querySelector(".healthyPage");
+  healthyBtn.addEventListener("click", () => {
+    healthyPage.classList.add("active");
+    homePage.classList.add("active");
+    interPage.classList.remove("active");
+    signupPage.classList.remove("active");
+    signinPage.classList.remove("active");
+    contactPage.classList.remove("active");
   });
 
   // Signin
@@ -417,6 +430,7 @@ function eventUser() {
     homePage.classList.add("active");
     signinPage.classList.add("active");
     contactPage.classList.remove("active");
+    healthyPage.classList.remove("active");
   });
   // Sigup
   let signUn = document.querySelector(".sign_up");
@@ -426,8 +440,23 @@ function eventUser() {
     interPage.classList.remove("active");
     homePage.classList.add("active");
     contactPage.classList.remove("active");
+    healthyPage.classList.remove("active");
   });
 }
+
+function menuMobile() {
+  let menuBar = document.querySelector(".btn_menu");
+  let btncloseMenu = document.querySelector(".nav_mobile-btn");
+  menuBar.addEventListener("click", () => {
+    let navBarMobile = document.querySelector(".nav_mobile");
+    navBarMobile.classList.add("active");
+  });
+  btncloseMenu.addEventListener("click", () => {
+    let navBarMobile = document.querySelector(".nav_mobile");
+    navBarMobile.classList.remove("active");
+  });
+}
+
 // Render product new
 function renderNew() {
   let outputNew = "";
@@ -539,7 +568,7 @@ function renderPopalur(arrPopalur) {
                         <span>${item.priceOld}</span>
                         <i class="fa-solid fa-basket-shopping btn_cart"></i>
                     </div>
-                </div
+    </div>
             </div>
           </div> 
     `;
@@ -596,12 +625,6 @@ function renderSelling() {
   sellingProduct.innerHTML = html;
 }
 // SlideShow Selling
-
-function slideSell() {
-  let carousel = document.querySelector(".sell_carousel");
-
-  carousel.addEventListener("mousemove", dragging);
-}
 
 // String to VND
 function priceToString(number) {
@@ -807,123 +830,94 @@ function validateContact() {
   });
 }
 
+function validateContactOne() {
+  const enterInformationWrongEl = document.querySelector(
+    ".enterInformationWrong"
+  );
+  const wrongEl = document.querySelectorAll(".wrong");
+  enterInformationWrongEl.addEventListener("submit", function (rong) {
+    rong.preventDefault();
+    const fullEnterNameEl = enterInformationWrongEl.namexl;
+    const fullEnterName = fullEnterNameEl.value;
+    if (fullEnterName === "") {
+      wrongEl[0].innerHTML = "Bạn vui lòng nhập đầy đủ họ và tên!";
+    } else {
+      wrongEl[0].innerHTML = "";
+    }
+    const fullEnterEmailEl = enterInformationWrongEl.emailxl;
+    const fullEnterEmail = fullEnterEmailEl.value;
+    const relexfullEnterEmail = /^\w{4,}@\w+\.\w+$/;
+    if (fullEnterEmail === " ") {
+      wrongEl[1].innerHTML = "Vui lòng nhập email";
+    } else if (fullEnterEmail.length < 8) {
+      wrongEl[1].innerHTML =
+        "Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
+    } else if (relexfullEnterEmail.test(fullEnterEmail) === false) {
+      wrongEl[1].innerHTML =
+        "Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
+    } else {
+      wrongEl[1].innerHTML = "";
+    }
+
+    const enterphoneEl = enterInformationWrongEl.numberxl;
+    const enterphone = enterphoneEl.value;
+    if (enterphone === "") {
+      wrongEl[2].innerHTML = "Bạn vui lòng nhập số điện thoại!";
+    } else if (isNaN() === true) {
+      wrongEl[2].innerHTML = "Vui lòng nhập số!";
+    } else if (enterphone.length !== 9) {
+      wrongEl[2].innerHTML = "Số của bạn bị sai vui lòng nhập lại!";
+    } else {
+      wrongEl[2].innerHTML = "";
+    }
+    const toEnteraddress = enterInformationWrongEl.addressxl;
+    const toEnteradd = toEnteraddress.value;
+    if (toEnteradd === "") {
+      wrongEl[3].innerHTML = " Vui lòng nhập địa chỉ!";
+    } else {
+      wrongEl[3].ỉnnerHTML = "";
+    }
+    const totextareaxlEl = enterInformationWrongEl.textareaxl;
+    const totextareaxl = totextareaxlEl.value;
+    if (totextareaxl === "") {
+      wrongEl[4].innerHTML = "Vui lòng nhập nội dung";
+    } else {
+      wrongEl[4].innerHTML = "";
+    }
+  });
+}
+
 function start() {
   eventUser();
+  menuMobile();
   renderPopalur(ngucocProduct);
   itemPopalur();
   renderSelling();
-  // slideSell();
   renderNew();
   addCart();
   validateContact();
+  validateContactOne();
   validateSignup();
 }
 start();
- 
-
-// liên hệ 1
-const enterInformationWrongEl=document.querySelector(".enterInformationWrong");
-const wrongEl=document.querySelectorAll(".wrong");
-enterInformationWrongEl.addEventListener("submit", function(rong){
-  rong.preventDefault();
-  const fullEnterNameEl=enterInformationWrongEl.namexl;
-  const fullEnterName=fullEnterNameEl.value;
-  if(fullEnterName==="")
-  {
-   wrongEl[0].innerHTML="Bạn vui lòng nhập đầy đủ họ và tên!";
-   
-  } 
-  else{
-   wrongEl[0].innerHTML="";
-    
-  }
-  const fullEnterEmailEl=enterInformationWrongEl.emailxl;
-  const fullEnterEmail=fullEnterEmailEl.value;
-  const relexfullEnterEmail=/^\w{4,}@\w+\.\w+$/;
-  if(fullEnterEmail===" ")
-  {
-     wrongEl[1].innerHTML="Vui lòng nhập email";
-     
-  }
-  else if(fullEnterEmail.length<8)
-  {
-     wrongEl[1].innerHTML="Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
-    
-  }
-  else if(relexfullEnterEmail.test(fullEnterEmail)===false)
-  {
-     wrongEl[1].innerHTML="Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
-    
-  }
-  else
-  {
-     wrongEl[1].innerHTML="";
-  }
-
-  const enterphoneEl=enterInformationWrongEl.numberxl;
-  const enterphone=enterphoneEl.value;
-  if(enterphone==="")
-  {
-   wrongEl[2].innerHTML="Bạn vui lòng nhập số điện thoại!";
-   
-  }
-  else if(isNaN()===true)
-  {
-   wrongEl[2].innerHTML="Vui lòng nhập số!";
-    
-  }
-  else if(enterphone.length !==9)
-  {
-   wrongEl[2].innerHTML="Số của bạn bị sai vui lòng nhập lại!";
-    
-  }
-  else{
-   wrongEl[2].innerHTML="";
-    
-  }
-  const toEnteraddress=enterInformationWrongEl.addressxl;
-  const toEnteradd=toEnteraddress.value;
-  if(toEnteradd==="")
-  {
-   wrongEl[3].innerHTML=" Vui lòng nhập địa chỉ!";
-  
-  }
-  else{
-   wrongEl[3].ỉnnerHTML="";
-   
-  }
-  const totextareaxlEl=enterInformationWrongEl.textareaxl;
-  const totextareaxl=totextareaxlEl.value;
-  if(totextareaxl==="")
-  {
-    wrongEl[4].innerHTML="Vui lòng nhập nội dung";
-  }
-  else
-  {
-    wrongEl[4].innerHTML="";
-  }
-  
-});
-
 
 // Khuyen mai
-    const swipe = document.getElementById("swipe");
-    const buttonLeft = document.getElementById("button-1");
-    const buttonRight = document.getElementById("button-2")
-    const length = 5;
+const swipe = document.getElementById("swipe");
+const buttonLeft = document.getElementById("button-1");
+const buttonRight = document.getElementById("button-2");
+const length = 5;
 
-    
-    let index = -2;
-    let translateX = index * 405;
-    swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-    buttonLeft.addEventListener('click', function() {
-        index = index === 0 ? -length + 1 : index + 1;
-        translateX = index * 405;
-        swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-    })
+let index = -2;
+let translateX = index * 205;
+swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+buttonLeft.addEventListener("click", function () {
+  index = index === 0 ? -length + 1 : index + 1;
+  translateX = index * 405;
+  swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+});
 
-    buttonRight.addEventListener('click', function() {
-        index = index === (-length - 1) ? -2 : index - 1;
-        translateX = index * 405;
-        swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-    })
+buttonRight.addEventListener("click", function () {
+  index = index === -length - 1 ? -2 : index - 1;
+  translateX = index * 405;
+  swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+});

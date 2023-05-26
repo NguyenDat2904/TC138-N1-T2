@@ -18,7 +18,7 @@
 <body>
         <!--I. Header - Đạt -->
         <header>
-            <div class="container-xl header_main">
+            <div class="container-xl header_main d-none d-xl-flex">
                 <div class="header_logo">
                     <a href="">
                     </a>
@@ -79,9 +79,58 @@
                     </div>
                 </div>
             </div>
+            <div class="container-xl header_moblie d-flex d-xl-none">
+                <i class="fa-solid fa-bars btn_menu"></i>
+                <div class="header_logo">
+                    <a href="">
+                    </a>
+                </div>
+                <div class="header_user">
+                
+                    <div class="user_langue">
+                
+                        <a href="">
+                            <img src="picter/img/langue/us.svg" alt="">
+                
+                        </a>
+                        <a href="">
+                            <img src="picter/img/langue/vn.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="user_profile">
+                        <a href="" class="hover_green">
+                            <i class="far fa-user"></i>
+                            <ul class="user_item text_small ">
+                                <li class="hover_green sign_in">Đăng nhập</li>
+                                <li class="hover_green sign_up">Đăng Ký</li>
+                                <li class="hover_green">So sánh</li>
+                                <li class="hover_green">Yêu thích</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="user_card">
+                        <a href=""><i class="fas fa-cart-plus"></i></a>
+                        <div class="user_card-number posi">0</div>
+                        <div class="user_card-total">
+                            <div class="total_product">
+                                <!-- <p>Không có thông tin cho loại dữ liệu này</p> -->
+                            </div>
+                            <div class="user_total-money">
+                                <p>Tổng tiền:</p>
+                                <span>0 đ</span>
+                            </div>
+                            <hr>
+                            <div class="btn_total-money">
+                                <button class="btn_total btn_total-left">Giỏ hàng</button>
+                                <button class="btn_total btn_total-right">Thanh toán</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
         <nav>
-            <div class="container-xl nav_main">
+            <div class="container-xl nav_main d-none d-xl-flex">
                 <div class="nav-products">
                     <i class="fas fa-bars"></i>
                     <span>Danh mục sản phẩm</span>
@@ -115,7 +164,7 @@
                             <i class="fas fa-chevron-down"></i>
                             <ul class="nav_item">
                                 <li>Kiến thức</li>
-                                <li>Sống khỏe</li>
+                                <li class="healthyPage">Sống khỏe</li>
                             </ul>
                         </li>
                         <li class="nav_list-product">
@@ -138,6 +187,62 @@
                 </div>
             </div>
         </nav>
+        <div class= "nav_mobile d-block d-xl-none">
+            <div class="nav_mobile-logo">
+                <div class="header_logo header_mobile">
+                    <a href="">
+                    </a>
+                </div>
+                <i class="fa-solid fa-xmark nav_mobile-btn"></i>
+            </div>
+            <div class="nav_search-logo">
+                <input class="nav_search" type="text" placeholder="Nhập từ khóa">
+                <i class="fas fa-search btn_mobile-search"></i>
+            </div>
+            <div class="nav_list d-block d-xl-flex">
+                <ul class="text_small">
+                    <li class="nav_list-product nav_mobile-product homePage hover">Trang chủ</li>
+                    <li class="nav_list-product nav_mobile-product interducePage">Giới thiệu</li>
+                    <li class="nav_list-product nav_mobile-product">
+                        Sản phẩm
+                        <i class="fas fa-chevron-down"></i>
+                        <ul class="nav_item">
+                            <li>Bột, Ngũ cốc</li>
+                            <li>Rau củ quả</li>
+                            <li>Hải sản</li>
+                            <li>Thức phẩm đông lạnh</li>
+                            <li>Sushi & Sashimi Deli</li>
+                            <li>Thịt - Cá</li>
+                        </ul>
+                    </li>
+                    <li class="nav_list-product nav_mobile-product">
+                        Dịch vụ
+                        <i class="fas fa-chevron-down"></i>
+                        <ul class="nav_item">
+                            <li>Hỗ trợ khách hàng</li>
+                            <li>Dịch vụ khác</li>
+                        </ul>
+                    </li>
+                    <li class="nav_list-product nav_mobile-product">
+                        Tin tức
+                        <i class="fas fa-chevron-down"></i>
+                        <ul class="nav_item">
+                            <li>Kiến thức</li>
+                            <li class="healthyPage">Sống khỏe</li>
+                        </ul>
+                    </li>
+                    <li class="nav_list-product nav_mobile-product">
+                        Thư viện
+                        <i class="fas fa-chevron-down"></i>
+                        <ul class="nav_item">
+                            <li>Thư viện ảnh</li>
+                            <li>Thư viện video</li>
+                        </ul>
+                    </li>
+                    <li class="nav_list-product nav_mobile-product contactPage">Liên hệ</li>
+                </ul>
+            </div>
+        </div>
         <!-- BEGIN HOME PAGE -->
         <div id="home_page">
                     <section id="slide">
@@ -323,7 +428,7 @@
                     <div class="swipe">
                         <div class="swipe-1" >
                             <div class="swipe-text"> 
-                                <h2>Khuyến mãi trong ngày</h2>
+                                <h2 class="title_h1">Khuyến mãi trong ngày</h2>
                             </div>
                             <div class="container" id="swipe">
                                 <div class="wrapper p1">
@@ -965,11 +1070,7 @@
                             </div>
                         </div>
                     </div>
-                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
+                
                     <!-- END Sản phẩm phổ biến, bán chạy -->
                     <!-- Làm thêm -->
                     <section class="container-xl productnew">
@@ -1233,7 +1334,7 @@
                                     <p class="text2">- Bạn chưa có tài khoản</p>
                                 </div>
                                 <div>
-                                    <a class="signUpNow text1" href="https://demo037131.web30s.vn/dang-ky">Đăng ký ngay</a>
+                                    <p class="signUpNow text1">Đăng ký ngay</p>
                                 </div>
                             </div>
                         </form>
@@ -1268,33 +1369,45 @@
         </div>
         <!-- END SIGNUP -->
 
+        <!-- Sống khỏe -->
+        <div id="healthy_page">
+            <h1>Sống khỏe</h1>
+        </div>
+        <!-- END Sống khỏe -->
+
         <!-- LIÊN HỆ -->
         <div id="contact_page">
-            <div class="container-xl contactPage">
+            <section class="router_page">
+                <div class="container-xl ">
+                    <div class="router_text d-flex">
+                        <p class="router_home">Trang chủ</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <p class="router_child">Liên Hệ</p>
+                    </div>
+                </div>
+            </section>
+            <div class="container-xl page_contact">
                 <div class="sendContact">
-                    
-                    <h5>Mọi thắc mắc xin liên hệ</h5>
-                     <h2 class="h2r"> Gửi liên hệ</h2>
+                    <h5 class="contact_title">Mọi thắc mắc xin liên hệ</h5>
+                     <h2 class="leader_title h2r"> Gửi liên hệ</h2>
                      
                      <form class="enterInformationWrong">
                          <div class="enterInformation">
-                            <div>
+                            <div class="errorWrong">
                                  <p class="wrong"></p>
                                     <div class="enter">
-                                       
                                         <div class="mega"><h6>*</h6></div>
                                         <div><input class="borderxl" name="namexl" type="text" placeholder="Họ và tên"></div>
                                     </div>
-                            </div>
-                                   <div>
+                                </div>
+                                   <div class="errorWrong">
                                      <p class="wrong"></p>
                                      <div class="enter">
-                                       
                                         <div class="mega"><h6>*</h6></div>
                                         <div><input  class="borderxl" name="emailxl"  type="email" placeholder="Email"></div> 
                                     </div>
                                    </div>
-                                   <div>
+                                   <div class="errorWrong">
                                     <p class="wrong"></p>
                                      <div class="enter"> 
                                         
@@ -1302,19 +1415,19 @@
                                         <div> <input  class="borderxl" name="numberxl" type="text" placeholder="Số điện thoại"></div> 
                                     </div>
                                    </div>
-                                   <div>
+                                   <div class="errorWrong">
                                      <p class="wrong"></p>
                                      <div class="enter">
                                        
                                         <div class="mega"><h6>*</h6></div>
-                                        <div> <input  class="borderxl" name="addressxl" type="text" placeholder="Địa chỉ"></div>
+                                        <div> <input  class="borderxl " name="addressxl" type="text" placeholder="Địa chỉ"></div>
                                     </div>
                                    </div>
                                    
                                 </div>
                                 <div class="content">
                                     <p class="wrong"></p>
-                                    <textarea  class="textxl" name="textareaxl" cols="30" rows="10" placeholder="Nội dung"></textarea>
+                                    <textarea  class="textxl enter" name="textareaxl" cols="30" rows="10" placeholder="Nội dung"></textarea>
                                 </div>
                                 <div class="send">
                                     <button class="buttonlm" type="submit" value="Gửi Đi">
@@ -1327,7 +1440,7 @@
                      </form>
                     
                 <div class="information">
-                    <h1>Thông tin về Nest</h1>
+                    <h1 class="leader_title ">Thông tin về Nest</h1>
                     <p>Cam kết tất cả thực phẩm đạt chuẩn từ sản phẩm đến khâu phân phối</p>
                     <div class="nest">
                         <div><i class="fa-solid fa-location-dot ic"></i></div>
@@ -1350,15 +1463,7 @@
                     </div>
                 </div>
             </div>
-            <section class="router_page">
-                <div class="container-xl ">
-                    <div class="router_text d-flex">
-                        <p class="router_home">Trang chủ</p>
-                        <i class="fa-solid fa-angle-right"></i>
-                        <p class="router_child">Liên Hệ</p>
-                    </div>
-                </div>
-            </section>
+            
         </div>
         <!-- END LIÊN HỆ -->
 
@@ -1430,7 +1535,7 @@
         <footer class="footer">
             <div class="footer-item container-xl">
                 <div class="row">
-                    <div class="col col-6 col-lg-3 footer-item address">
+                    <div class="col col-6 col-xl-3 pb-3 pb-xl-0 footer-item address">
                         <div class="footer-logo">
                             <img src="picter/img/logo/logo.png" alt="">
                         </div>
@@ -1455,14 +1560,14 @@
                             <p>Mở cửa hàng ngày từ 7:00 đến 20:00</p>
                         </div>
                     </div>
-                    <div class="col col-6 col-lg-3 footer-item dichvu">
+                    <div class="col col-6 col-xl-3 footer-item dichvu">
                         <h3 class="footer_title">DỊCH VỤ</h3>
                         <ul class="footer_list">
                             <li class="hover_green">Hỗ trợ khách hàng</li>
                             <li class="hover_green">Dịch vụ khác</li>
                         </ul>
                     </div>
-                    <div class="col col-6 col-lg-3 footer-item sanpham">
+                    <div class="col col-6 col-xl-3 footer-item sanpham">
                         <h3 class="footer_title">SẢN PHẨM</h3>
                         <ul class="footer_list">
                             <li class="hover_green">Bột, ngũ cốc</li>
@@ -1472,7 +1577,7 @@
                             <li class="hover_green">Sasimi</li>
                         </ul>
                     </div>
-                    <div class="col col-6 col-lg-3 footer-item menu">
+                    <div class="col col-6 col-xl-3 footer-item menu">
                         <h3 class="footer_title">MENU</h3>
                         <ul class="footer_list">
                             <li class="hover_green">Trang chủ</li>
@@ -1494,7 +1599,9 @@
         <!-- END Footer  -->
     
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"></script>

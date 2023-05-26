@@ -27,7 +27,7 @@
 body{
     font-family: "Quicksand";
     font-size: 16px;
-
+    overflow-x: hidden;
 }
 
 ul {
@@ -163,9 +163,25 @@ input::placeholder {
 
 .header_main{
     padding: 30px 0;
-    display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.header_moblie{
+    padding: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 7%) 0px 2px 5px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid #ececec;
+    cursor: pointer;
+}
+.btn_menu{
+    color: var(--background-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    padding-left: 10px;
 }
 .header_logo > a{
     background-image: url("/picter/img/logo/logo.png");
@@ -371,17 +387,16 @@ input::placeholder {
     transform: translateY(-10px) translateX(-10px);
 }
 nav{
+    background-color: var(--white-color);
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
     position: sticky;
     top: 0;
     z-index: 9;
-    background-color: var(--white-color);
-    padding: 15px 0;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
 }
 .nav_main{
     
-    display: flex;
+    padding: 15px 0;
     align-items: center;
     justify-content: space-between;
 }
@@ -394,6 +409,77 @@ nav{
     border-radius: 4px;
     font-weight: var(--fw7);
     text-align: center;
+}
+.nav_mobile{
+    width: 300px;
+    height: 100vh;
+    background-color: var(--white-color);
+    box-shadow: #e4e4e4 2px 0px 10px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    padding-top: 20px;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+}
+.nav_mobile.active{
+    transform: translateX(0);
+}
+.nav_mobile .nav_list > ul{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav_mobile-logo{
+    padding: 0 20px 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #ececec;
+}
+.nav_mobile .header_mobile{
+
+}
+.nav_mobile-btn{
+    width: 25px;
+    height: 25px;
+    background-color: var(--background-green);
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+.nav_search-logo{
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 45px;
+    padding: 0px 20px;
+}
+.btn_mobile-search{
+    position: absolute;
+    font-size: 20px;
+    font-weight: var(--fw7);
+    color: #ccc;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.nav_search{
+    background-color: #F4F6FA;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    outline: none;
+    border: none;
+}
+.nav_mobile-product{
+    border-bottom: 1px solid #ececec;
 }
 .nav_list > ul{
     display: flex;
@@ -778,13 +864,20 @@ article >.box_infor{
     display: block;
 }
 
+#healthy_page{
+    display: none;
+}
+#healthy_page.active{
+    display: block;
+}
 /* liên hệ_1*/
-.contactPage{
+.page_contact{
     margin-bottom: 80px;
     display:grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto;
     gap:10px;
+    margin-top: 40px;
 }
 .mega{
     color:#ec0015;
@@ -794,13 +887,15 @@ article >.box_infor{
 .borderxl{
     padding-left: 10px;
     border:none;
+    outline: none;
 }
 .enter{
     padding:12px;
-    border:1px solid black;
+    border:1px solid #ececec;
     border-radius:5px;
     display:flex;
-    position:relative
+    position:relative;
+    outline: none;
 }
 .enterInformation{
     margin-right:5%;
@@ -852,12 +947,18 @@ article >.box_infor{
 .thise{
     border-radius:10px;
 }
+.errorWrong{
+    position: relative;
+}
 .wrong{
-    color:#ec0015;
+    font-size: 11px;
+    position: absolute;
+    top: 100%;
+    color:#dd4b39;
 }
 @media (min-width:480px) and (max-width:998px)
 {
-    .contactPage{
+    .page_contact{
         display:block;
         width:100%;
     }
@@ -873,7 +974,7 @@ article >.box_infor{
 }
 @media (max-width:480px)
 {
-    .contactPage{
+    .page_contact{
         display:block;
         width:100%;
     }
@@ -891,6 +992,12 @@ article >.box_infor{
     .enterInformation{
         margin-right: 0px;
     }
+}
+.contact_title{
+    font-size: 20px;
+    font-weight: var(--fw6);
+    color: var(--background-green);
+    margin-bottom: 5px;
 }
 /* end liên hệ 1 */
 .gridSignUp{
@@ -971,7 +1078,6 @@ article >.box_infor{
     color:#ec0015;
     font-size: 13px;
     bottom: -23px;
-   
 }
 @media (max-width:1000px)
 {
@@ -987,9 +1093,6 @@ article >.box_infor{
 }
 #signin_page.active {
     display: block;
-}
-body{
-    font-family: 'Quicksand';
 }
 /* END RESET CSS */
 
@@ -1417,45 +1520,7 @@ h4{
 }
 
 
-@media (max-width: 840px) {
-    .card_Surrounded {
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px;
-    }
-}
 
-@media (max-width: 840px) {
-
-    .last {
-        display: none;
-    }
-
-    .list {
-        padding: 0px;
-    }
-
-    .Surrounded {
-        padding: 0px;
-        display: block;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    p {
-        font-size: 20px;
-    }
-}
-
-@media (min-width:840px) and (max-width: 992px) {
-    .card_Surrounded {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100px;
-    }
-
-
-}
 
 /* BEGIN CSS SIGN IN VŨ*/
 #signin_page.active {
@@ -1549,6 +1614,7 @@ h4{
     color: #00bc7f;
     font-family: "Quicksand";
     font-weight: 800;
+    cursor: pointer;
   }
   .linkSignUp{
     transform: translateY(-70%);
@@ -1680,7 +1746,43 @@ h4{
     font-size: 20px;
     font-weight: var(--fw6);
     color: var(--white-color);
+}
 
+/* Reponsive */
+
+
+@media (max-width: 840px) {
+    .card_Surrounded {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px;
+    }
+.last {
+    display: none;
+}
+        
+.list {
+    padding: 0px;
+}
+        
+.Surrounded {
+    padding: 0px;
+    display: block;
+}
+        
+h2 {
+    font-size: 25px;
+}
+        
+p {
+    font-size: 20px;
+}
+}
+
+@media (min-width:840px) and (max-width: 992px) {
+    .card_Surrounded {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px;
+    }
 }
 
 /*khuyen mai*/
@@ -1695,6 +1797,7 @@ h4{
 .swipe-text{
     font-size: 32px;
     font-weight: var(--fw7);
+    margin-bottom: 40px;
 }
 
 .w-100 {
@@ -1714,7 +1817,6 @@ h4{
 }
 
 .swipe-1 {
-    width: 1300px;
     overflow: hidden;
     height: 600px;
     position: relative;
@@ -1734,7 +1836,7 @@ h4{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    width: 395px;
+    width: 380px;
     height: 400px;
     margin: 0 15px;
     border-radius: 15px;
@@ -1826,7 +1928,6 @@ h4{
     color: #253D4E;
     font-size: 16px;
     font-weight: 600;
-    line-height: 23px;
     margin: 0 0 8px;
     text-align: left;
     font-family: Montserrat, sans-serif;
@@ -1906,9 +2007,16 @@ h4{
 
 .icon-wrap {
     position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    color: #7E7E7E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #fff;
+    background-color: #F2F3F4;
     color: #7e7e7e;
 }
 
@@ -1918,13 +2026,13 @@ h4{
 }
 
 .icon-left {
-    left: 15px;
+    left: 2%;
     z-index: 4;
     border-radius: 50%;
 }
 
 .icon-right {
-    right: 5px;
+    right: 2%;
     z-index: 4;
     border-radius: 50%;
 }

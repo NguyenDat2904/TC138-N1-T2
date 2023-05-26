@@ -1784,3 +1784,259 @@ p {
         grid-template-rows: 100px;
     }
 }
+
+/*khuyen mai*/
+:root {
+    --color-black: #000;
+    --bg-white: #fff;
+}
+.swipe{
+    display: flex;
+    justify-content: center;
+}
+.swipe-text{
+    font-size: 32px;
+    font-weight: var(--fw7);
+    margin-bottom: 40px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.swipe-1 {
+    overflow: hidden;
+    height: 600px;
+    position: relative;
+    transition: all 500ms ease;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    box-sizing: content-box;
+    position: relative;
+    transition: all 300ms ease;
+    font-size: 16px;
+}
+
+.wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 380px;
+    height: 400px;
+    margin: 0 15px;
+    border-radius: 15px;
+    color: var(--color-black);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: rgb(0 0 0 / 5%) 5px 5px 15px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: visible;
+}
+.wrapper.p1{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/muc-la-cau-a-1.jpg?t=1670224691);
+}
+.wrapper.p2{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/hat-dieu-rang-muoi-thanh-viet-hu-170g-1.jpg?t=1670224696);
+}
+.wrapper.p3{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/tp7_1.png?t=1670224691);
+}
+.wrapper.p4{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/18_1.jpg?t=1670224688);
+}
+.wrapper.p5{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/1_1.jpg?t=1670224687);
+}
+.wrapper.p6{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/tom-tich-1.jpg?t=1670224688);
+}
+.wrapper.p7{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/2_1.jpg?t=1670224686);
+}
+.wrapper.p8{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/so-diep-nhat-1.jpg?t=1670224687);
+}
+.wrapper.p9{
+    background-image: url(https://demo037131.web30s.vn/datafiles/35782/upload/images/product/ca-tuyet-alaska-2.jpg?t=1670224685);
+}
+
+
+.content {
+    position: absolute;
+    background-color: var(--bg-white);
+    width: 85%;
+    height: auto;
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    top: calc(100% + 80px);
+    z-index: 5;
+    box-shadow: rgb(0 0 0 / 5%) 5px 5px 15px;
+    display: block;
+    padding: 20px;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.timer {
+    vertical-align: center;
+    align-items: center;
+    height: auto;
+    overflow: visible;
+    margin: 0 0 15px;
+    display: inline-flex;
+}
+
+.timer-item {
+    flex: 1;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 5px 5px 15px;
+    background-color: var(--bg-white);
+    border: 1px dashed #3BB77E;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.timer-number {
+    color: #3BB77E;
+    font-weight: 700;
+}
+
+.timer-text {
+    margin: 0 0 0 2px;
+    color: var(--color-black);
+}
+
+.title {
+    height: auto;
+    color: #253D4E;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    text-align: left;
+    font-family: Montserrat, sans-serif;
+}
+
+.rating {
+    height: auto;
+    text-align: left;
+}
+
+.rating>span {
+    font-size: 18px;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    color: #888;
+    position: relative;
+}
+
+.rating>span::before {
+    content: "\2605";
+    line-height: initial;
+    font-size: inherit;
+}
+
+.price {
+    align-items: center;
+    justify-content: space-between;
+    align-content: stretch;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.price-sale {
+    color: #3BB77E;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+}
+
+.price-exact {
+    text-decoration: line-through;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    padding-left: 10px;
+}
+
+.shopping-link {
+    height: 40px;
+    background-color: #DEF9EC;
+    border-radius: 5px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: all 300ms ease;
+    color: #3BB77E;
+}
+
+.shopping-icon {
+    color: inherit;
+    padding: 0 5px;
+}
+
+.shopping-link:hover {
+    cursor: pointer;
+    background-color: #3BB77E;
+    color: #fff;
+}
+
+.content:hover {
+    transform: translateX(-50%) translateY(calc(-100% - 10px));
+    transition: all 500ms ease;
+}
+
+.icon-wrap {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    color: #7E7E7E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #F2F3F4;
+    color: #7e7e7e;
+}
+
+.icon-wrap:hover {
+    background-color: #3BB77E;
+    color: #fff;
+}
+
+.icon-left {
+    left: 2%;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+.icon-right {
+    right: 2%;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+.icon-arrow {
+    color: inherit;
+}

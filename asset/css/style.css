@@ -778,6 +778,121 @@ article >.box_infor{
     display: block;
 }
 
+/* liên hệ_1*/
+.contactPage{
+    margin-bottom: 80px;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap:10px;
+}
+.mega{
+    color:#ec0015;
+    position:absolute;
+    top:17px;
+}
+.borderxl{
+    padding-left: 10px;
+    border:none;
+}
+.enter{
+    padding:12px;
+    border:1px solid black;
+    border-radius:5px;
+    display:flex;
+    position:relative
+}
+.enterInformation{
+    margin-right:5%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap:20px;
+}
+.textxl{
+    margin-top: 20px;
+    width:95%;
+    border-radius: 10px;
+}
+.buttonlm{
+    border:none;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding:15px 45px;
+    background-color: #00bc7f;
+    color:#DEF9EC;
+    display:flex;
+    gap:10px;
+}
+.buttonlm:hover{
+    background-color: #FDC040;
+    transition: 30ms;
+}
+
+
+.red{
+    font-size: 17px;
+    font-weight: 600;
+}
+.nest{
+    display:flex;
+}
+.ic{
+    color:#00bc7f;
+    margin-right: 10px;
+}
+.h2r{
+    margin-bottom: 45px;
+}
+.information{
+    display:flex;
+    flex-direction: column;
+    gap:17px;
+}
+.thise{
+    border-radius:10px;
+}
+.wrong{
+    color:#ec0015;
+}
+@media (min-width:480px) and (max-width:998px)
+{
+    .contactPage{
+        display:block;
+        width:100%;
+    }
+    .information{
+        display:none;
+    }
+    .textxl{
+        width:100%;
+    }
+    .enterInformation{
+        margin-right: 0px;
+    }
+}
+@media (max-width:480px)
+{
+    .contactPage{
+        display:block;
+        width:100%;
+    }
+    .information{
+        display:none;
+    }
+    .enterInformation{
+     grid-template-columns: 1fr ;
+    grid-template-rows: auto ;
+    gap:10px;
+    }
+    .textxl{
+        width:100%;
+    }
+    .enterInformation{
+        margin-right: 0px;
+    }
+}
+/* end liên hệ 1 */
 .gridSignUp{
     display:grid;
     gap:50px;

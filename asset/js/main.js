@@ -906,7 +906,7 @@ enterInformationWrongEl.addEventListener("submit", function(rong){
 });
 
 
-
+// Khuyen mai
     const swipe = document.getElementById("swipe");
     const buttonLeft = document.getElementById("button-1");
     const buttonRight = document.getElementById("button-2")

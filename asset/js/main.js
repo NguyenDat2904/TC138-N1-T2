@@ -904,3 +904,26 @@ enterInformationWrongEl.addEventListener("submit", function(rong){
   }
   
 });
+
+
+
+    const swipe = document.getElementById("swipe");
+    const buttonLeft = document.getElementById("button-1");
+    const buttonRight = document.getElementById("button-2")
+    const length = 5;
+
+    
+    let index = -2;
+    let translateX = index * 405;
+    swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+    buttonLeft.addEventListener('click', function() {
+        index = index === 0 ? -length + 1 : index + 1;
+        translateX = index * 405;
+        swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+    })
+
+    buttonRight.addEventListener('click', function() {
+        index = index === (-length - 1) ? -2 : index - 1;
+        translateX = index * 405;
+        swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+    })

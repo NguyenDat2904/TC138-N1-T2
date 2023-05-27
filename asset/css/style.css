@@ -735,7 +735,8 @@ article >.box_infor{
     font-weight: var(--fw5);
     text-decoration: line-through;
 }
-.box_cart > i{
+.box_cart > .btn_cart{
+    border: none;
     color: var(--background-green);
     font-size: 16px;
     background-color: #DEF9EC;
@@ -748,7 +749,7 @@ article >.box_infor{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.box_cart>i:hover {
+.box_cart > .btn_cart:hover {
     background-color: var(--background-green);
     color: var(--white-color);
 }
@@ -1125,16 +1126,18 @@ article >.box_infor{
     line-height: 27px;
     font-size: 20px;
 }
-.dmc_btn{
+.box_cart > .dmc_btn{
     color: var(--white-color);
     font-size: 13px;
     padding: 6px 15px;
     background-color: var(--background-green);
     transition: all 0.3s ease;
     font-weight: var(--fw7);
+    width: 100%;
+    gap: 5px;
 }
 
-.dmc_btn:hover{
+.box_cart > .dmc_btn:hover{
     background-color: #FDC040;
     color: var(--white-color);
 }
@@ -1981,6 +1984,30 @@ h4{
 
 .icon-arrow {
     color: inherit;
+}
+
+.model_box{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.model_title{
+    color: var(--white-color);
+    text-shadow: 0 0 1px #777;
+    font-weight: 400;
+    font-size: 18px;
+}
+.btn_buy-model{
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+.btn_buy-more{
+    background-color: var(--white-color);
+    border: 1px solid #2abfa5;
+    color: #2abfa5;
+}
+.btn_buy-cart{
+    background-color: #2abfa5;
+    color: var(--white-color);
+    border: 1px solid #2abfa5;
 }
 
 @media (min-width:840px) and (max-width: 1199px) {

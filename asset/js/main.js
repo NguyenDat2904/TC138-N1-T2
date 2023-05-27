@@ -492,7 +492,9 @@ function renderNew() {
                     ${formatA}
                     </div>
                     <span>${item.priceOld}</span>
-              <i class="fa-solid fa-cart-plus btn_cart"></i>
+                        <button class="btn_cart"  type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
             </div>
           </div>
         </article>
@@ -566,9 +568,25 @@ function renderPopalur(arrPopalur) {
                     <div class="cart-money box_cart">
                         <p class="card-text price_prod">${formatA}</p>
                         <span>${item.priceOld}</span>
-                        <i class="fa-solid fa-basket-shopping btn_cart"></i>
+                        <!-- Box model -->
+                        <button class="btn_cart"  type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content model_box">
+                                <div class="modal-header">
+                                  <h1 class="modal-title model_title" id="staticBackdropLabel">Thêm vào giỏ hàng thành công</h1>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn_buy-model btn_buy-more" data-bs-dismiss="modal">Mua thêm</button>
+                                  <button type="button" class="btn_buy-model btn_buy-cart">Giỏ hàng</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </div>
-    </div>
+               </div>
             </div>
           </div> 
     `;
@@ -611,11 +629,25 @@ function renderSelling() {
                                                 <div class="sell_line"></div>
                                                 <p class="sell_status">Còn hàng</p>
                                                 <div class="box_cart">
-                                                  <button class="btn_cart sell_btn dmc_btn price_prod">
+                                                  <button class="btn_cart sell_btn dmc_btn price_prod" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                     <i class="fa-solid fa-cart-plus"></i>
                                                     <span>Thêm giỏ hàng</span>
                                                 </button>
+                                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content model_box">
+                                                          <div class="modal-header">
+                                                            <h1 class="modal-title model_title" id="staticBackdropLabel">Thêm vào giỏ hàng thành công</h1>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn_buy-model btn_buy-more" data-bs-dismiss="modal">Mua thêm</button>
+                                                            <button type="button" class="btn_buy-model btn_buy-cart">Giỏ hàng</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                     </div>

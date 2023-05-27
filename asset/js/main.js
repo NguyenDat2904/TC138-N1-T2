@@ -543,7 +543,7 @@ function renderPopalur(arrPopalur) {
       let a = +item.price;
       let formatA = priceToString(a);
       return /*html*/ `
-      <div class="col col-6 col-lg-3 py-2">
+      <div class="col col-12 col-sm-6 col-md-4 col-lg-3 py-2">
           <div class="card card_popalur d-flex flex-column align-items-center papolur_hover">
             <div class="card-img poplaur_img">
               <img src=${item.img} class="img_prod" alt="..." />
@@ -584,7 +584,7 @@ function renderSelling() {
       let a = +item.price;
       let formatA = priceToString(a);
       return /*html*/ `
-                                          <div class="col">
+                                          <div class="col col-12 col-sm-6 col-md-4">
                                         <div class="card sell_card papolur_hover">
                                             <div class="card-img sell_img poplaur_img">
                                                 <img src=${item.img} class="img_prod " alt="..." />

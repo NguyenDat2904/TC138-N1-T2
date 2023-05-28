@@ -444,6 +444,16 @@ function eventUser() {
   });
 }
 
+function fixedScrol() {
+  window.addEventListener("scroll", () => {
+    let cardActive = document.querySelector(".user_card-scroll");
+    if (window.scrollY > 80) {
+      cardActive.classList.add("active");
+    } else {
+      cardActive.classList.remove("active");
+    }
+  });
+}
 function menuMobile() {
   let menuBar = document.querySelector(".btn_menu");
   let btncloseMenu = document.querySelector(".nav_mobile-btn");
@@ -629,7 +639,7 @@ function renderSelling() {
                                                 <div class="sell_line"></div>
                                                 <p class="sell_status">Còn hàng</p>
                                                 <div class="box_cart">
-                                                  <button class="btn_cart sell_btn dmc_btn price_prod" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                  <button class="btn_cart sell_btn dmc_btn price_prod w-100" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                     <i class="fa-solid fa-cart-plus"></i>
                                                     <span>Thêm giỏ hàng</span>
                                                 </button>
@@ -704,12 +714,13 @@ function renderCart(button) {
 }
 // Render khi có list giỏ hàng
 function cartForm(cartItems) {
+  let cartCount = -1;
   let total = 0;
-  let numberCart = document.querySelector(".posi");
-  let formCart = document.querySelector(".total_product");
+  let numberCart = document.querySelectorAll(".posi");
+  let formCart = document.querySelectorAll(".total_product");
   let renderProd = cartItems
-    .map((item, index) => {
-      numberCart.innerHTML = index + 1;
+    .map((item) => {
+      cartCount++;
       let b = parseFloat(item.price.replace(/\./g, "").replace("₫", ""));
       let c = b * item.quantity;
       let formatC = priceToString(c);
@@ -735,11 +746,21 @@ function cartForm(cartItems) {
   `;
     })
     .join("");
-
-  formCart.innerHTML = renderProd;
+  numberCart.forEach((item) => {
+    if (cartItems.length < 1) {
+      item.innerHTML = `0`;
+    } else {
+      item.innerHTML = cartCount++;
+    }
+  });
+  formCart.forEach((item) => {
+    item.innerHTML = renderProd;
+  });
   let totalEnd = priceToString(total);
-  let totalMoney = document.querySelector(".user_total-money span");
-  totalMoney.innerHTML = totalEnd;
+  let totalMoney = document.querySelectorAll(".user_total-money span");
+  totalMoney.forEach((item) => {
+    item.innerHTML = totalEnd;
+  });
   removeCart(cartItems);
 }
 // Xóa sản phẩm trong giỏ hàng
@@ -750,10 +771,10 @@ function removeCart(cartItems) {
       item.addEventListener("click", () => {
         let product = item.parentElement.parentElement;
         let productName = product.querySelector(".cart_name").innerHTML;
-        const productIndex = cartItems.findIndex(
-          (product) => product.name === productName
-        );
-        if (productIndex !== 1) {
+        const productIndex = cartItems.findIndex((prod) => {
+          return prod.name === productName;
+        });
+        if (productIndex >= 0) {
           cartItems.splice(productIndex, 1);
           cartForm(cartItems);
         }
@@ -921,6 +942,7 @@ function validateContactOne() {
 
 function start() {
   eventUser();
+  fixedScrol();
   menuMobile();
   renderPopalur(ngucocProduct);
   itemPopalur();

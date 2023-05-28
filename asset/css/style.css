@@ -849,6 +849,82 @@ article >.box_infor{
     text-align: center;
     font-size: 16px;
 }
+/* gioi thieu Long */
+*{
+    margin: 20px 0 0 0;
+    padding: 0;}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: -20px;
+    grid-row-gap: 0px;
+    background-color: whitesmoke;
+    height: 100vh;
+    padding: 0 10% 0 10%;
+    }
+    .div1 { 
+        grid-area: 1 / 1 / 2 / 2;
+           
+     }
+    p{
+       color: black;
+       font-size: 20px;
+     }
+    .div2 { 
+        grid-area: 1 / 2 / 2 / 3;
+        width: fit-content;
+        width: 30%;
+    }
+    .img1{
+        height: 70vh ;
+        border-radius: 5%;
+        padding: 0;
+    }
+    .img2{
+        height: 50vh;
+        border-radius: 5%;
+    }
+    .div3 { 
+        grid-area: 1 / 3 / 2 / 4;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin-left: 80px;
+     }
+    .div4 { grid-area: 2 / 1 / 3 / 2; }
+    .div5 { grid-area: 2 / 2 / 3 / 3; }
+    .div6 { grid-area: 2 / 3 / 3 / 4; }
+
+.title1{
+    font-family: "Quicksand";
+        color: var(--c-1670226262902, #7E7E7E);
+        font-size: 24px;
+        text-align: left;
+        font-weight: 700;
+        margin-top: 20px;
+} 
+.div1-title1{
+    color: var(--c-1670226160838, #253D4E);
+        font-size: 35px;
+        text-align: left;
+        font-weight: 700;
+        font-family: "Quicksand";
+}
+.div1-info1{
+    font-family: Quicksand;
+    color: #253D4E;
+    font-size: 16px;
+}
+.div1-title2{
+    color: var(--c-1670226160838, #253D4E);
+    font-size: 25px;
+    text-align: left;
+    font-weight: 700;
+    font-family: "Quicksand";
+}   
+
+/* end gioi thieu Long */
 /* dang ki */
 #signup_page {
     display: none;

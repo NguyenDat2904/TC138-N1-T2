@@ -293,10 +293,8 @@
                                 </button>
                             </div>
                         </div>
-                    </section>
-                    
+                    </section>     
                     <!-- End Header -->
-                    
                     <!-- II. Danh mục chính - Vũ -->
                             <section class="container-xl dmc">
                                 <h1>Danh mục chính</h1>
@@ -1301,7 +1299,7 @@
                                 <p class="poot"></p>
                                 <div class="bu"><h6>*</h6></div>
                                 <div class="min">
-                                    <input class="get" name="fullemail" type="email" placeholder="Email">                      
+                                    <input class="get" name="fullemail" type="text" placeholder="Email">                      
                                 </div>                      
                             </div>
                             <div class="page">
@@ -1423,7 +1421,17 @@
 
         <!-- Sống khỏe -->
         <div id="healthy_page">
-            <h1>Sống khỏe</h1>
+            <section class="router_page">
+                <div class="container-xl ">
+                    <div class="router_text d-flex">
+                        <p class="router_home">Trang chủ</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <p class="router_home">Tin tức</p>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <p class="router_child">Sống khỏe</p>
+                    </div>
+                </div>
+            </section>
             <section class="container-xl healthy">
                 <div class="healthy_foot">
                     <div class="healthy_foot_1">
@@ -1441,12 +1449,10 @@
                                   
                                           </div>
                                        <div  class="healthy_foot_of_1_1_3">
-                                           <a href="">
                                                 <div class="healthy_foot_of_arrow">
                                                     <div>Tìm hiểu thêm </div>
                                                     <div><i class="fa-solid fa-arrow-right"></i></div>
                                                 </div>
-                                             </a>
                                         </div>
                                     </div>
                         </div>
@@ -1463,10 +1469,6 @@
                                        <div><i class="fa-solid fa-eye"></i></div>
                                        <div>4</div></i>
                                    </div>
-<<<<<<< HEAD
-=======
-                         
->>>>>>> 9a6436a25094f9d5c4d8131fe35a42d79232d244
                                  </div>
                               <div  class="healthy_foot_of_1_1_3">
                                   <a href="">
@@ -1508,7 +1510,7 @@
                 <div class="healthy_learn_about">
                     <div class="healthy_learn_about_1">
                         <div ><input class="healthy_learn_about_1_search" type="text" placeholder="Nhập từ khóa..."></div>
-                        <div class="healthy_learn_about_1_icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="healthy_learn_about_1_icon hover_green"><i class="fa-solid fa-magnifying-glass"></i></div>
                     </div>
                     <div class="healthy_learn_about_2">
                         <h4 class="healthy_learn_about_size">Danh mục tin tức</h4>
@@ -1520,25 +1522,31 @@
                                 <div class="accordion accordion-flush healthy_learn_about_2_1" id="accordionFlushExample">
                                     <div class="accordion-item">
                                       <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <button class="accordion-button collapsed accordion_btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                           Kiến thức
                                         </button>
                                       </h2>
                                       <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body"><div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                                Kiến thức 1
-                                              </button>
-                                            </h2>
-                                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                              <div class="accordion-body">
-                                                <div class="accordion-body_1">Kiến thứ 2</div>
-                                                <div><hr class="accordion-body_1"/></div>
-                                                <div class="accordion-body_1">Kiến thức 3</div>
-                                                <div><hr class="accordion-body_1"/></div>
-                                              </div>
-                                            </div>
+                                        <div class="accordion-body">
+                                            <div class="accordion-item">
+                                                <div class="accordion accordion-flush healthy_learn_about_2_1" id="accordionFlushExample_1">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed accordion_btn" type="button" data-bs-toggle="collapse"
+                                                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                                Kiến thức 1
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample_1">
+                                                <div class="accordion-body">
+                                                    <div class="accordion-body_1">Kiến thứ 2</div>
+                                                    <div><hr class="accordion-body_1"/></div>
+                                                    <div class="accordion-body_1">Kiến thức 3</div>
+                                                    <div><hr class="accordion-body_1"/></div>
+                                                </div>
+                                                </div>
                                           </div>
                                         </div>
                                       </div>
@@ -1557,29 +1565,26 @@
                             <div><img src="./picter/ngu-coc-nguyen-hat-giup-giam-nguy-co-ung-thu-gan-toi-37.jpg" style="width:80px;height:80px" alt=""></div>
                             <div class="healthy_new">
                                 <div><a href=""><p class="healthy_learn_about_p">Ngũ cốc nguyên hạt giúp giảm nguy cơ un...</p></a> </div>
-                                <div>  <p>05/12/2022</p></div>
+                                <div><p class="healthy_text">05/12/2022</p></div>
                             </div>
                             
                         </div>
-                        <div><hr class="healthy_dashed"/></div> 
                         <div class="healthy_learn_about_3_1">
                             <div><img src="./picter/dieu-gi-xay-ra-khi-ban-an-ngu-coc-bua-sang-1.jpg" style="width:80px;height:80px" alt=""></div>
                             <div class="healthy_new">
                                 <div> <a href=""> <p class="healthy_learn_about_p">Điều gì xảy ra khi bạn ăn ngũ cốc bữa sáng?</p></a></div>
-                                <div> <p>05/12/2022</p></div>
+                                <div> <p class="healthy_text">05/12/2022</p></div>
                             </div>
                               
                         </div>
-                        <div><hr class="healthy_dashed"/></div> 
                         <div class="healthy_learn_about_3_1">
                             <div><img src="./picter/ngu-coc-nguyen-hat-dinh-duong-cho-nguoi-benh-tieu-duong-1.jpg" style="width:80px;height:80px" alt=""></div>
                             <div class="healthy_new">
                                 <div> <a href=""> <p class="healthy_learn_about_p">Ngũ cốc nguyên hạt dinh dưỡng cho người...</p></a> </div>
-                                <div>    <p>05/12/2022</p></div>
+                                <div>    <p class="healthy_text">05/12/2022</p></div>
                             </div>
                             
                         </div>
-                          <div><hr class="healthy_dashed"/></div>
                     </div>
                     <div class="healthy_learn_about_4">
                         <h4 class="healthy_learn_about_size">Thư viện ảnh</h4>
@@ -1588,7 +1593,13 @@
                         </div>
                         <div class="healthy_anfile"><p>Không có thông tin cho loại dữ liệu này</p></div>
                     </div>
-                    <div ><img class="healthy_learn_about_5" src="./picter/banner-11.png" alt=""></div>
+                    <div class="helthy_about-img">
+                        <img class="healthy_learn_about_5" src="./picter/banner-11.png" alt="">
+                        <div class="helthy_about-text">
+                            <p class="helthy_text-title">Oganic</p>
+                            <h1 class="hover_green helthy_text-desc">Giảm giá 17%<br>Nước ép trái<br>cây</h1>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -1623,7 +1634,7 @@
                                      <p class="wrong"></p>
                                      <div class="enter">
                                         <div class="mega"><h6>*</h6></div>
-                                        <div><input  class="borderxl" name="emailxl"  type="email" placeholder="Email"></div> 
+                                        <div><input  class="borderxl" name="emailxl"  type="text" placeholder="Email"></div> 
                                     </div>
                                    </div>
                                    <div class="errorWrong">

@@ -273,35 +273,35 @@ const shushiProduct = [
     price: "245000",
     priceOld: "270.000 đ",
     discount: "-9%",
-    img: "picter/img/phobien/shushi/9B.png",
+    img: "https://demo037131.web30s.vn/datafiles/35782/upload/images/product/5-1.png?t=1670224685",
   },
   {
     name: "Sushi Mix 4B",
     price: "145500",
     priceOld: "160.000 đ",
     discount: "-9%",
-    img: "picter/img/phobien/shushi/4b.png",
+    img: "https://demo037131.web30s.vn/datafiles/35782/upload/images/product/4-1.png?t=1670224685",
   },
   {
     name: "Sashimi Cá Hồi",
     price: "254000",
     priceOld: "270.000 đ",
     discount: "-6%",
-    img: "picter/img/phobien/shushi/sushicahoi.png",
+    img: "https://demo037131.web30s.vn/datafiles/35782/upload/images/product/3-1.png?t=1670224685",
   },
   {
     name: "Sushi Mix 10A",
     price: "247500",
     priceOld: "275.000 đ",
     discount: "-10%",
-    img: "picter/img/phobien/shushi/10A.png",
+    img: "https://demo037131.web30s.vn/datafiles/35782/upload/images/product/2-1.png?t=1670224684",
   },
   {
     name: "Combo Sashimi 6B",
     price: "585000",
     priceOld: "650.000 đ",
     discount: "-10%",
-    img: "picter/img/phobien/shushi/6B.png",
+    img: "https://demo037131.web30s.vn/datafiles/35782/upload/images/product/1-1.png?t=1670224684",
   },
 ];
 const thicaProduct = [
@@ -666,8 +666,28 @@ function renderSelling() {
     .join("");
   sellingProduct.innerHTML = html;
 }
-// SlideShow Selling
+// Khuyen mai
+function discountSlideShow() {
+  const swipe = document.getElementById("swipe");
+  const buttonLeft = document.getElementById("button-1");
+  const buttonRight = document.getElementById("button-2");
+  const length = 5;
 
+  let index = -2;
+  let translateX = index * 205;
+  swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+  buttonLeft.addEventListener("click", function () {
+    index = index === 0 ? -length + 1 : index + 1;
+    translateX = index * 405;
+    swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+  });
+
+  buttonRight.addEventListener("click", function () {
+    index = index === -length - 1 ? -2 : index - 1;
+    translateX = index * 405;
+    swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
+  });
+}
 // String to VND
 function priceToString(number) {
   let numberString = number.toLocaleString("vi-VN", {
@@ -714,7 +734,7 @@ function renderCart(button) {
 }
 // Render khi có list giỏ hàng
 function cartForm(cartItems) {
-  let cartCount = -1;
+  let cartCount = -2;
   let total = 0;
   let numberCart = document.querySelectorAll(".posi");
   let formCart = document.querySelectorAll(".total_product");
@@ -798,11 +818,12 @@ function validateSignup() {
     }
     const phoneEl = tosignUp_page.phoneNumber;
     const phone = phoneEl.value;
+    const relexPhone = /^0[0-9]{9,10}$/;
     if (phone === "") {
       p_get[1].innerHTML = "Bạn vui lòng nhập số điện thoại!";
-    } else if (isNaN() === true) {
+    } else if (isNaN(phone) === true) {
       p_get[1].innerHTML = "Vui lòng nhập số!";
-    } else if (phone.length !== 9) {
+    } else if (relexPhone.test(phone) === false) {
       p_get[1].innerHTML = "Số của bạn bị sai vui lòng nhập lại!";
     } else {
       p_get[1].innerHTML = "";
@@ -812,19 +833,19 @@ function validateSignup() {
     if (toadd === "") {
       p_get[2].innerHTML = " Vui lòng nhập địa chỉ!";
     } else {
-      p_get[2].ỉnnerHTML = "";
+      p_get[2].innerHTML = "";
     }
     const fullEmailEl = tosignUp_page.fullemail;
     const fullEmail = fullEmailEl.value;
-    const relexfullEmail = /^\w{4,}@\w+\.\w+$/;
-    if (fullEmail === " ") {
+    const relexfullEmail = /^\w{1,}@\w+\.\w+$/;
+    if (fullEmail === "") {
       p_get[3].innerHTML = "Vui lòng nhập email";
-    } else if (fullEmail.length < 8) {
-      p_get[3].innerHTML =
-        "Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
     } else if (relexfullEmail.test(fullEmail) === false) {
       p_get[3].innerHTML =
         "Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
+    } else if (fullEmail.length < 8) {
+      p_get[3].innerHTML =
+        "Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
     } else {
       p_get[3].innerHTML = "";
     }
@@ -832,6 +853,8 @@ function validateSignup() {
     const touserName = touserNameEl.value;
     if (touserName === "") {
       p_get[4].innerHTML = "Vui lòng nhập tên truy cập!";
+    } else if (touserName.length < 6) {
+      p_get[4].innerHTML = "Tên truy cập phải có ít nhất 6 kí tự";
     } else {
       p_get[4].innerHTML = "";
     }
@@ -839,7 +862,7 @@ function validateSignup() {
     const topassword = topasswordEl.value;
     if (topassword === "") {
       p_get[5].innerHTML = "Vui lòng nhập mật khẩu!";
-    } else if (topassword.length < 5) {
+    } else if (topassword.length < 6) {
       p_get[5].innerHTML = "Bảo mật kém vui lòng nhập mật khẩu dài hơn!";
     } else {
       p_get[5].innerHTML = "";
@@ -902,23 +925,25 @@ function validateContactOne() {
     const relexfullEnterEmail = /^\w{4,}@\w+\.\w+$/;
     if (fullEnterEmail === " ") {
       wrongEl[1].innerHTML = "Vui lòng nhập email";
-    } else if (fullEnterEmail.length < 8) {
-      wrongEl[1].innerHTML =
-        "Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
     } else if (relexfullEnterEmail.test(fullEnterEmail) === false) {
       wrongEl[1].innerHTML =
         "Vui lòng điền đúng định dạng Email. Ví dụ: infor@gmail.com";
+    } else if (fullEnterEmail.length < 8) {
+      wrongEl[1].innerHTML =
+        "Email phải có ít nhất 8 ký tự.Ví dụ : infor@gmail.com";
     } else {
       wrongEl[1].innerHTML = "";
     }
 
     const enterphoneEl = enterInformationWrongEl.numberxl;
     const enterphone = enterphoneEl.value;
+    const relexPhone = /^0[0-9]{9,10}$/;
+
     if (enterphone === "") {
       wrongEl[2].innerHTML = "Bạn vui lòng nhập số điện thoại!";
-    } else if (isNaN() === true) {
+    } else if (isNaN(enterphone) === true) {
       wrongEl[2].innerHTML = "Vui lòng nhập số!";
-    } else if (enterphone.length !== 9) {
+    } else if (relexPhone.test(enterphone) === false) {
       wrongEl[2].innerHTML = "Số của bạn bị sai vui lòng nhập lại!";
     } else {
       wrongEl[2].innerHTML = "";
@@ -928,7 +953,7 @@ function validateContactOne() {
     if (toEnteradd === "") {
       wrongEl[3].innerHTML = " Vui lòng nhập địa chỉ!";
     } else {
-      wrongEl[3].ỉnnerHTML = "";
+      wrongEl[3].innerHTML = "";
     }
     const totextareaxlEl = enterInformationWrongEl.textareaxl;
     const totextareaxl = totextareaxlEl.value;
@@ -947,6 +972,7 @@ function start() {
   renderPopalur(ngucocProduct);
   itemPopalur();
   renderSelling();
+  discountSlideShow();
   renderNew();
   addCart();
   validateContact();
@@ -954,24 +980,3 @@ function start() {
   validateSignup();
 }
 start();
-
-// Khuyen mai
-const swipe = document.getElementById("swipe");
-const buttonLeft = document.getElementById("button-1");
-const buttonRight = document.getElementById("button-2");
-const length = 5;
-
-let index = -2;
-let translateX = index * 205;
-swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-buttonLeft.addEventListener("click", function () {
-  index = index === 0 ? -length + 1 : index + 1;
-  translateX = index * 405;
-  swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-});
-
-buttonRight.addEventListener("click", function () {
-  index = index === -length - 1 ? -2 : index - 1;
-  translateX = index * 405;
-  swipe.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-});

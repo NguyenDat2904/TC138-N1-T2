@@ -1129,8 +1129,8 @@ article >.box_infor{
 
 /* BEGIN CSS DANH MỤC CHÍNH */
 .dmc{
-    padding: 60px 0;
-    
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .dmc > h1{
     color: #253D4E;
@@ -1333,7 +1333,8 @@ h4{
 
 /* PHỔ BIẾN */
 .popalur{
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .popalur_nav{
     display: flex;
@@ -1834,7 +1835,7 @@ h4{
     transition: all 500ms ease;
 }
 
-.container {
+#swipe {
     height: 100%;
     display: flex;
     box-sizing: content-box;
@@ -2081,112 +2082,6 @@ h4{
     border: 1px solid #2abfa5;
 }
 
-@media (min-width:840px) and (max-width: 1199px) {
-    .dmc > h1 {
-        padding-left: 10px;
-    }
-    .card_Surrounded {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100px;
-    }
-}
-
-@media (max-width: 1199px) {
-    .dmc>h1 {
-            padding-left: 10px;
-    }
-    .selling_card{
-        height: 505px;
-        margin-bottom: 30px;
-    }
-    .popalur_list{
-        font-size: 20px;
-    }
-    .card_Surrounded {
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px;
-    }
-    #slide{
-        padding-top: 100px;
-    }
-    .slide_body{
-        padding-left: 50px;
-        width: 95%;
-    }
-
-    .slide_body>h2 {
-        font-size: 32px;
-    }
-    .slide_body>p{
-            font-size: 20px;
-        }
-                .last {
-                    display: none;
-                }
-        
-                .list {
-                    padding: 0px;
-                }
-        
-                .Surrounded {
-                    display: block;
-                }
-    
-}
-@media(max-width:839px) {
-
-    .page_contact {
-        display: block;
-        width: 100%;
-    }
-
-    .information {
-        display: none;
-    }
-        
-    .textxl {
-        width: 100%;
-    }
-
-    .enterInformation {
-        margin-right: 0px;
-    }
-}
-
-@media (max-width:480px) {
-    .title_h1{
-        font-size: 27px;
-        padding-left: 10px;
-    }
-    .register{
-        width: 100px;
-    }
-    .Surrounded h2{
-        font-size: 27px;
-    }
-    .page_contact {
-        display: block;
-        width: 100%;
-    }
-
-    .information {
-        display: none;
-    }
-
-    .enterInformation {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 10px;
-    }
-
-    .textxl {
-        width: 100%;
-    }
-
-    .enterInformation {
-        margin-right: 0px;
-    }
-}
 /*healthy*/
 .healthy{
     padding: 50px 0;
@@ -2440,3 +2335,111 @@ h4{
     border-color: #00bc7f;
 }
 /*end healthy*/
+
+
+/* REPONSIVE */
+@media (min-width:840px) and (max-width: 1199px) {
+    .dmc>h1 {
+        padding-left: 10px;
+    }
+    .card_Surrounded {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px;
+    }
+}
+@media (max-width: 1199px) {
+    .selling_card {
+        height: 505px;
+        margin-bottom: 30px;
+    }
+    .popalur_list {
+        font-size: 20px;
+    }
+    .card_Surrounded {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px;
+    }
+    #slide {
+        padding-top: 100px;
+    }
+    .slide_body {
+        padding-left: 50px;
+        width: 95%;
+    }
+    .slide_body>h2 {
+        font-size: 32px;
+    }
+
+    .slide_body>p {
+        font-size: 20px;
+    }
+
+    .last {
+        display: none;
+    }
+
+    .list {
+        padding: 0px;
+    }
+
+    .Surrounded {
+        display: block;
+    }
+}
+
+@media(max-width:839px) {
+    .page_contact {
+        display: block;
+        width: 100%;
+    }
+
+    .information {
+        display: none;
+    }
+
+    .textxl {
+        width: 100%;
+    }
+
+    .enterInformation {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width:480px) {
+    .title_h1 {
+        font-size: 27px;
+        padding-left: 10px;
+    }
+
+    .register {
+        width: 100px;
+    }
+
+    .Surrounded h2 {
+        font-size: 27px;
+    }
+
+    .page_contact {
+        display: block;
+        width: 100%;
+    }
+
+    .information {
+        display: none;
+    }
+
+    .enterInformation {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .textxl {
+        width: 100%;
+    }
+
+    .enterInformation {
+        margin-right: 0px;
+    }
+}

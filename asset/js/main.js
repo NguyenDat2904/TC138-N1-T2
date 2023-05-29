@@ -365,13 +365,16 @@ const thicaProduct = [
 
 function eventUser() {
   // USER
-  let userEl = document.querySelector(".user_profile");
-  let userItem = document.querySelector(".user_item");
-  userEl.addEventListener("click", (e) => {
-    e.preventDefault();
-    userItem.classList.toggle("active");
+  let userEl = document.querySelectorAll(".user_profile");
+  let userItem = document.querySelectorAll(".user_item");
+  userEl.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      userItem.forEach((item) => {
+        item.classList.toggle("active");
+      });
+    });
   });
-
   // GIOI THIEU
   let homePage = document.querySelector("#home_page");
   let interPage = document.querySelector("#interduce_page");
@@ -734,7 +737,7 @@ function renderCart(button) {
 }
 // Render khi có list giỏ hàng
 function cartForm(cartItems) {
-  let cartCount = -2;
+  let cartCount = 0;
   let total = 0;
   let numberCart = document.querySelectorAll(".posi");
   let formCart = document.querySelectorAll(".total_product");
@@ -770,7 +773,7 @@ function cartForm(cartItems) {
     if (cartItems.length < 1) {
       item.innerHTML = `0`;
     } else {
-      item.innerHTML = cartCount++;
+      item.innerHTML = cartCount;
     }
   });
   formCart.forEach((item) => {
